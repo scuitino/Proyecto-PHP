@@ -1,3 +1,4 @@
+
 <?php
 
 // uncomment the following to define a path alias
@@ -65,8 +66,11 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=mydb',
 			'emulatePrepare' => true,
+
 			'username' => 'root',
 			'password' => 'stemcol',
+
+
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
