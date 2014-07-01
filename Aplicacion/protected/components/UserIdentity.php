@@ -7,6 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
+	private $_id;
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -17,17 +18,22 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
+		
+       $User=Users::model()->find("LOWER(username)=?",array(strtolower($this->username)));
+
+		if($User===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
+		elseif($this->password!==$User->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
+		{
+
+			$this->_id=$User->id;
+			//$this->setState("email",$user->email) guarda variables de sesion
+			//Yii::app()->user->getState("email"); asi las llamo
 			$this->errorCode=self::ERROR_NONE;
+		}
+			
 		return !$this->errorCode;
 	}
 }
