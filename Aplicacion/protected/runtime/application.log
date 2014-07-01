@@ -595,3 +595,167 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/Proyecto/Aplicacion/index.php/users/List
 ---
+2014/06/30 14:24:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/create".' in /var/www/Proyecto/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController('users/create')
+#1 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto/Aplicacion/index.php/users/create
+HTTP_REFERER=http://localhost/Proyecto/Aplicacion/index.php
+---
+2014/06/30 15:26:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "registro".' in /var/www/Proyecto/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController('registro')
+#1 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto/Aplicacion/index.php/registro
+---
+2014/06/30 17:18:12 [error] [php] Undefined variable: user (/var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php:24)
+Stack trace:
+#0 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#3 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (24)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
+2014/06/30 17:19:15 [error] [php] Undefined variable: user (/var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php:24)
+Stack trace:
+#0 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#3 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (24)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
+2014/06/30 17:20:17 [error] [php] Undefined variable: user (/var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php:24)
+Stack trace:
+#0 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#3 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (24)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
+2014/06/30 17:21:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/create".' in /var/www/Proyecto/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController('users/create')
+#1 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto/Aplicacion/index.php/users/create
+---
+2014/06/30 17:21:43 [error] [php] Undefined variable: user (/var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php:24)
+Stack trace:
+#0 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#3 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (24)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
+2014/06/30 17:22:04 [error] [php] Undefined variable: user (/var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php:26)
+Stack trace:
+#0 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#3 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (26)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
+2014/06/30 17:22:16 [error] [php] Undefined variable: user (/var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php:31)
+Stack trace:
+#0 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#3 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (31)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
+2014/06/30 18:09:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/create".' in /var/www/Proyecto/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController('user/create')
+#1 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto/Aplicacion/index.php/user/create
+HTTP_REFERER=http://localhost/Proyecto/Aplicacion/index.php
+---
+2014/06/30 18:10:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/create".' in /var/www/Proyecto/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController('user/create')
+#1 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto/Aplicacion/index.php/user/create
+---
+2014/06/30 18:10:29 [error] [php] include(User.php): failed to open stream: No such file or directory (/var/www/Proyecto/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php(22): spl_autoload_call()
+#1 /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /var/www/Proyecto/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
+#3 /var/www/Proyecto/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#4 /var/www/Proyecto/framework/base/CModel.php(159): CInlineValidator->validate()
+#5 /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php(94): LoginForm->validate()
+#6 /var/www/Proyecto/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/Proyecto/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/Proyecto/framework/web/CController.php(286): SiteController->runAction()
+#9 /var/www/Proyecto/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /var/www/Proyecto/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /var/www/Proyecto/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/Proyecto/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/Proyecto/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto/Aplicacion/index.php/site/login
+in /var/www/Proyecto/Aplicacion/protected/components/UserIdentity.php (22)
+in /var/www/Proyecto/Aplicacion/protected/models/LoginForm.php (52)
+in /var/www/Proyecto/Aplicacion/protected/controllers/SiteController.php (94)
