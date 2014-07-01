@@ -78,7 +78,7 @@ $this->widget(
                         'url' => '#',
                         'items' => array(
                             array('label' => 'Lista de Usuarios', 'url'=>array('users/admin')),
-                            array('label' => 'Lista de Inmuebles', 'url' => '#'),
+                            array('label' => 'Lista de Inmuebles', 'url' =>array('Inmueble/index')),
                             
                             '---',
                             array('label' => 'Separated link', 'url' => '#'),
