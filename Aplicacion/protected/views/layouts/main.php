@@ -33,7 +33,7 @@ $this->widget(
     'bootstrap.widgets.TbNavbar',
     array(
         'type' => null,//'inverse',
-        'brand' => 'Inmobiliaria Tecnologo',
+        'brand' => 'Inmobiliaria House',
         'brandUrl' => '#',
         'collapse' => true, // requires bootstrap-responsive.css
         'fixed' => false,

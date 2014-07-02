@@ -4,7 +4,7 @@
 $this->pageTitle="Inmobiliaria House";
 ?>
 
-	
+	HOLA COMO VA ACA ESTAMOS
 <?php 
 // Aca armo el listado de imagenes
 	echo CHtml::openTag('div', array('class' => 'row-fluid'));
