@@ -35,12 +35,14 @@ class SiteController extends Controller
 		));
 	}
 
+
 	public function action_img_view(){ 
 		$dataProvider=new CActiveDataProvider('Inmueble');
 	    $this->render('_img_view',array( 
 	    	'dataProvider'=>$dataProvider, 
 	    	));
 	    	 }
+
 
 	/**
 	 * This is the action to handle external exceptions.
