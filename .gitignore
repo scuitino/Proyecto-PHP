@@ -1,2 +1,2 @@
-/assets
-/protected/runtimes
+/assets/*
+/protected/runtimes/*
