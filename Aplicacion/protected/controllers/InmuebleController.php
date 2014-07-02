@@ -72,6 +72,7 @@ class InmuebleController extends Controller
 			$model->attributes=$_POST['Inmueble'];
 			$model->destacadoInmueble=0;
 			$model->estadoInmueble=0;
+			$model->Usuario_id= Yii::app()->user->id;
 
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idInmueble));
@@ -125,9 +126,7 @@ class InmuebleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Inmueble' 	
-			 ,array('criteria'=>array('condition'=>'estadoInmueble=true',)));
-
+		$dataProvider=new CActiveDataProvider('Inmueble');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

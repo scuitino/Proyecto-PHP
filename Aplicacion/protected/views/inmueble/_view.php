@@ -34,8 +34,8 @@
 	<br />
 
 	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('bañosInmuebles')); ?>:</b>
-	<?php echo CHtml::encode($data->bañosInmuebles); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('baniosInmuebles')); ?>:</b>
+	<?php echo CHtml::encode($data->baniosInmuebles); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('garageInmueble')); ?>:</b>

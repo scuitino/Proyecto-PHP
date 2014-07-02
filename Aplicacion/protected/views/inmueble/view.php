@@ -28,7 +28,7 @@ $this->menu=array(
 		'destacadoInmueble',
 		'estadoInmueble',
 		'habitacionesInmueble',
-		'bañosInmuebles',
+		'baniosInmuebles',
 		'garageInmueble',
 		'cocinaInmueble',
 		'superficieInmueble',
