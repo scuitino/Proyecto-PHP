@@ -1,6 +1,6 @@
 <?php
 
-class InmuebleController extends Controller
+class BarrioController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,19 +62,16 @@ class InmuebleController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Inmueble;
+		$model=new Barrio;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Inmueble']))
+		if(isset($_POST['Barrio']))
 		{
-			$model->attributes=$_POST['Inmueble'];
-			$model->destacadoInmueble=0;
-			$model->estadoInmueble=0;
-			$model->Usuario_id=Yii::app()->user->id;
+			$model->attributes=$_POST['Barrio'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->idInmueble));
+				$this->redirect(array('view','id'=>$model->idBarrio));
 		}
 
 		$this->render('create',array(
@@ -94,11 +91,11 @@ class InmuebleController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Inmueble']))
+		if(isset($_POST['Barrio']))
 		{
-			$model->attributes=$_POST['Inmueble'];
+			$model->attributes=$_POST['Barrio'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->idInmueble));
+				$this->redirect(array('view','id'=>$model->idBarrio));
 		}
 
 		$this->render('update',array(
@@ -125,7 +122,7 @@ class InmuebleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Inmueble');
+		$dataProvider=new CActiveDataProvider('Barrio');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -136,10 +133,10 @@ class InmuebleController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Inmueble('search');
+		$model=new Barrio('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Inmueble']))
-			$model->attributes=$_GET['Inmueble'];
+		if(isset($_GET['Barrio']))
+			$model->attributes=$_GET['Barrio'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,12 +147,12 @@ class InmuebleController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Inmueble the loaded model
+	 * @return Barrio the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Inmueble::model()->findByPk($id);
+		$model=Barrio::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -163,11 +160,11 @@ class InmuebleController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Inmueble $model the model to be validated
+	 * @param Barrio $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='inmueble-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='barrio-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

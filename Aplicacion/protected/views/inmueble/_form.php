@@ -41,9 +41,9 @@
 		<?php echo $form->labelEx($model,'destacadoInmueble'); ?>
 		<?php echo $form->textField($model,'destacadoInmueble'); ?>
 		<?php echo $form->error($model,'destacadoInmueble'); ?>
-	</div>
+	</div> -->
 
-	<div class="row">
+	<!-- <div class="row">
 		<?php echo $form->labelEx($model,'estadoInmueble'); ?>
 		<?php echo $form->textField($model,'estadoInmueble'); ?>
 		<?php echo $form->error($model,'estadoInmueble'); ?>
@@ -79,17 +79,23 @@
 		<?php echo $form->error($model,'superficieInmueble'); ?>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row">
 		<?php echo $form->labelEx($model,'Barrio_idBarrio'); ?>
 		<?php echo $form->textField($model,'Barrio_idBarrio'); ?>
 		<?php echo $form->error($model,'Barrio_idBarrio'); ?>
+	</div> -->
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'Barrio_idBarrio'); ?>
+		<?php echo $form->dropDownList($model,'Barrio_idBarrio', CHtml::listData(Barrio::model()->findAll(),'idBarrio','nombreBarrio')); ?>
+		<?php echo $form->error($model,'Barrio_idBarrio'); ?>
 	</div>
 
- 	<div class="row">
+	<!-- <div class="row">
 		<?php echo $form->labelEx($model,'Usuario_id'); ?>
 		<?php echo $form->textField($model,'Usuario_id'); ?>
 		<?php echo $form->error($model,'Usuario_id'); ?>
-	</div> 
+	</div> -->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
