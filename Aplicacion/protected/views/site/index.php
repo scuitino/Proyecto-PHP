@@ -3,19 +3,16 @@
 
 $this->pageTitle="Inmobiliaria House";
 ?>
-
-	HOLA COMO VA ACA ESTAMOS
 <?php 
 // Aca armo el listado de imagenes
-	echo CHtml::openTag('div', array('class' => 'row-fluid'));
+    echo CHtml::openTag('div', array('class' => 'row-fluid'));
     $this->widget(
-    'ext.yiibooster.widgets.TbThumbnails',
+    'bootstrap.widgets.TbThumbnails',
     array(
     'dataProvider' => $dataProvider,
     'template' => "{items}\n{pager}",
-    'itemView' => '/site/_img_view',
+    'itemView' => 'application.views.site._thumb',
     )
     );
-    echo CHtml::closeTag('div'); 
-
+    echo CHtml::closeTag('div');
 ?>
