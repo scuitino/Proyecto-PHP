@@ -1,3 +1,5 @@
+HOLAAAAAA
+<?php 
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
         <img src="<?php echo bu('images/placeholder260x180.gif');?>" alt="">
@@ -8,3 +10,4 @@
         </div>
     </div>
 </div>
+ ?>

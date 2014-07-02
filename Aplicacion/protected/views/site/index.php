@@ -8,11 +8,11 @@ $this->pageTitle="Inmobiliaria House";
 // Aca armo el listado de imagenes
 	echo CHtml::openTag('div', array('class' => 'row-fluid'));
     $this->widget(
-    'bootstrap.widgets.TbThumbnails',
+    'ext.yiibooster.widgets.TbThumbnails',
     array(
     'dataProvider' => $dataProvider,
     'template' => "{items}\n{pager}",
-    'itemView' => 'views._img_view',
+    'itemView' => '/site/_img_view',
     )
     );
     echo CHtml::closeTag('div'); 
