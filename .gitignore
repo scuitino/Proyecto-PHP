@@ -1,2 +1,4 @@
 /assets/*
 /protected/runtimes/*
+/protected/extensions/yii-debug-toolbar/
+
