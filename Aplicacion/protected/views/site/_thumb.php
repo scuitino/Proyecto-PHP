@@ -2,8 +2,8 @@
     <div class="thumbnail">
         <img src="images/house1.jpg" alt="">
         <div class="caption">
-            <h3><?php echo CHtml::encode($data->getAttributeLabel('nombreUsuario')); ?></h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <h3><?php echo CHtml::encode($data->tituloInmueble); ?></h3>
+            <p><?php echo CHtml::encode($data->descripcionInmueble) ?></p>
             <p><a href="#" class="btn btn-primary" role="button">Ver</a> <a href="#" class="btn btn-default" role="button">Votar</a></p>
         </div>
     </div>
