@@ -35,6 +35,13 @@ return array(
 	'components'=>array(
         
 
+        'authManager'=>array(
+                 
+                 "class"=>"CDbAuthManager",
+                 "connectionID"=>"db",
+                 
+        	),
+
 
 		'user'=>array(
 			// enable cookie-based authentication
@@ -75,7 +82,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=mydb',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'stemcol',
+			'password' => 'gork',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
