@@ -28,16 +28,16 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('view','create',),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'actions'=>array('index','update','update'),
+				'roles'=>array('cliente'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('index','admin','delete','update'),
+				'roles'=>array('administrador'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -69,9 +69,18 @@ class UsersController extends Controller
 
 		if(isset($_POST['Users']))
 		{
+
 			$model->attributes=$_POST['Users'];
-			if($model->save())
+			if($model->save()){
+               
+               //aca asigno el role
+				//Yii::app()->authManager->createRole("administrador");
+				//Yii::app()->authManager->assign("administrador",$model->id);
+				Yii::app()->authManager->assign("cliente",$model->id);
 				$this->redirect(array('view','id'=>$model->id));
+
+             }
+             
 		}
 
 		$this->render('create',array(
@@ -122,6 +131,7 @@ class UsersController extends Controller
 	 */
 	public function actionIndex()
 	{
+		 //Yii::app()->authManager->createRole("cliente");
 		$dataProvider=new CActiveDataProvider('Users');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
