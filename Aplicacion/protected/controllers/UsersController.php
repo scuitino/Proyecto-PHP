@@ -75,6 +75,7 @@ class UsersController extends Controller
                
                //aca asigno el role
 				//Yii::app()->authManager->createRole("administrador");
+				//Yii::app()->authManager->createRole("cliente");
 				//Yii::app()->authManager->assign("administrador",$model->id);
 				Yii::app()->authManager->assign("cliente",$model->id);
 				$this->redirect(array('view','id'=>$model->id));
