@@ -32,7 +32,7 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('index','update'),
+				'actions'=>array('update'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
