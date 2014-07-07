@@ -41,7 +41,7 @@ class UsersController extends Controller
 			),
 
 			array('allow',
-				'actions'=>array('index','admin','delete','update','create','view'),
+				'actions'=>array('index','admin','delete','update','create','view','empleado'),
 				'roles'=>array('director'),
 			),
 
@@ -100,6 +100,34 @@ class UsersController extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function actionEmpleado()
+{
+    $model=new Users('register');
+
+    // uncomment the following code to enable ajax-based validation
+    /*
+    if(isset($_POST['ajax']) && $_POST['ajax']==='users-empleado-form')
+    {
+        echo CActiveForm::validate($model);
+        Yii::app()->end();
+    }
+    */
+
+    if(isset($_POST['Users']))
+    {
+        $model->attributes=$_POST['Users'];
+        if($model->save()){
+               
+				Yii::app()->authManager->assign("empleado",$model->id);
+				
+
+				$this->redirect(array('view','id'=>$model->id));
+
+             }
+    }
+    $this->render('empleado',array('model'=>$model));
+}
 
 	/**
 	 * Updates a particular model.
@@ -166,6 +194,8 @@ class UsersController extends Controller
 		));
 	}
 
+	
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -180,6 +210,8 @@ class UsersController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+
 
 	/**
 	 * Performs the AJAX validation.
