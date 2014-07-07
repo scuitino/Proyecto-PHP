@@ -27,18 +27,24 @@ class UsersController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+			array('allow',  
 				'actions'=>array('view','create',),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','update','update'),
-				'roles'=>array('cliente'),
+			array('allow', 
+				'actions'=>array('index','update'),
+				'roles'=>array('registrado'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			array('allow',
 				'actions'=>array('index','admin','delete','update'),
-				'roles'=>array('administrador'),
+				'roles'=>array('empleado'),
 			),
+
+			array('allow',
+				'actions'=>array('index','admin','delete','update','create','view'),
+				'roles'=>array('director'),
+			),
+
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -73,11 +79,17 @@ class UsersController extends Controller
 			$model->attributes=$_POST['Users'];
 			if($model->save()){
                
-               //aca asigno el role
-				//Yii::app()->authManager->createRole("administrador");
-				//Yii::app()->authManager->createRole("cliente");
-				//Yii::app()->authManager->assign("administrador",$model->id);
-				Yii::app()->authManager->assign("cliente",$model->id);
+               //aca creo el rol
+				//Yii::app()->authManager->createRole("registrado");
+				//Yii::app()->authManager->createRole("empleado");
+				//Yii::app()->authManager->createRole("director");
+
+				//Asigno rol
+
+				Yii::app()->authManager->assign("registrado",$model->id);
+				//Yii::app()->authManager->assign("empleado",$model->id);
+				//Yii::app()->authManager->assign("director",$model->id);
+
 				$this->redirect(array('view','id'=>$model->id));
 
              }
