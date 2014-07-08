@@ -5306,3 +5306,17 @@ Stack trace:
 REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/images/header_inmo.jpg
 HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/1
 ---
+2014/07/03 19:09:10 [error] [exception.CException] exception 'CException' with message 'Property "CActiveDataProvider.estadoInmueble" is not defined.' in /var/www/Proyecto-PHP/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/SiteController.php(33): CComponent->__set('estadoInmueble', true)
+#1 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('')
+#6 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/
+---
