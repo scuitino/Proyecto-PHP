@@ -37,17 +37,19 @@
 		<?php echo $form->error($model,'precioInmueble'); ?>
 	</div>
 
-	<!-- <div class="row">
+	 <div class="row">
 		<?php echo $form->labelEx($model,'destacadoInmueble'); ?>
-		<?php echo $form->textField($model,'destacadoInmueble'); ?>
+		<?//php echo $form->textField($model,'destacadoInmueble'); ?>
+		<?php echo $form->dropDownList($model, 'destacadoInmueble', array('1' => 'Destacado', '0' => 'No Destacado')); ?> 
 		<?php echo $form->error($model,'destacadoInmueble'); ?>
 	</div>
 
-	<div class="row">
+	
 		<?php echo $form->labelEx($model,'estadoInmueble'); ?>
-		<?php echo $form->textField($model,'estadoInmueble'); ?>
+		<?//php echo $form->textField($model,'estadoInmueble'); ?>
+		<?php echo $form->dropDownList($model, 'estadoInmueble', array('1' => 'Aprobado', '0' => 'Pendiente')); ?> 
 		<?php echo $form->error($model,'estadoInmueble'); ?>
-	</div> -->
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'habitacionesInmueble'); ?>
@@ -79,11 +81,6 @@
 		<?php echo $form->error($model,'superficieInmueble'); ?>
 	</div>
 
-<!-- 	<div class="row">
-		<?php echo $form->labelEx($model,'Barrio_idBarrio'); ?>
-		<?php echo $form->textField($model,'Barrio_idBarrio'); ?>
-		<?php echo $form->error($model,'Barrio_idBarrio'); ?>
-	</div> -->
 	<div class="row">
 		<?php echo $form->labelEx($model,'Barrio_idBarrio'); ?>
 		<?php echo $form->dropDownList($model,'Barrio_idBarrio', CHtml::listData(Barrio::model()->findAll(),'idBarrio','nombreBarrio')); ?>
@@ -96,11 +93,6 @@
 		<?php echo $form->error($model,'Usuario_id'); ?>
 	</div>
 
-	<!-- <div class="row">
-		<?php echo $form->labelEx($model,'operacion'); ?>
-		<?php echo $form->textField($model,'operacion'); ?>
-		<?php echo $form->error($model,'operacion'); ?>
-	</div> -->
 	<div class="row">
 		<?php echo $form->labelEx($model,'operacion'); ?>
 		<?php echo ZHtml::enumDropDownList($model, 'operacion'); ?>
@@ -112,13 +104,6 @@
 		  <?php echo ZHtml::enumDropDownList($model, 'tipoInmueble'); ?>
 		<?php echo $form->error($model,'tipoInmueble'); ?>
 	</div>
-<!-- 
-	<div class="row">
-		<?//php echo $form->labelEx($model,'tipoInmueble'); ?>
-		<?//php echo $form->dropDownList($model,'tipoInmueble',array (''=>'','1'=>''=>''=>''))); ?>
-		<?//php echo $form->error($model,'tipoInmueble'); ?>
-	</div>
- -->
 
 
 	<div class="row buttons">

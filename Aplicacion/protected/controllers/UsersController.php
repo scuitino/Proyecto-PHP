@@ -27,18 +27,24 @@ class UsersController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+			array('allow',  
+				'actions'=>array('view','create','index'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
+			array('allow', 
+				'actions'=>array('update'),
+				'roles'=>array('registrado'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+			array('allow',
+				'actions'=>array('index','admin','delete','update'),
+				'roles'=>array('empleado'),
 			),
+
+			array('allow',
+				'actions'=>array('index','admin','delete','update','create','view','empleado'),
+				'roles'=>array('director'),
+			),
+
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -69,15 +75,59 @@ class UsersController extends Controller
 
 		if(isset($_POST['Users']))
 		{
+
 			$model->attributes=$_POST['Users'];
-			if($model->save())
+			if($model->save()){
+               
+               //aca creo el rol
+				//Yii::app()->authManager->createRole("registrado");
+				//Yii::app()->authManager->createRole("empleado");
+				//Yii::app()->authManager->createRole("director");
+
+				//Asigno rol
+
+				Yii::app()->authManager->assign("registrado",$model->id);
+				//Yii::app()->authManager->assign("empleado",$model->id);
+				//Yii::app()->authManager->assign("director",$model->id);
+
 				$this->redirect(array('view','id'=>$model->id));
+
+             }
+             
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
+
+	public function actionEmpleado()
+{
+    $model=new Users('register');
+
+    // uncomment the following code to enable ajax-based validation
+    /*
+    if(isset($_POST['ajax']) && $_POST['ajax']==='users-empleado-form')
+    {
+        echo CActiveForm::validate($model);
+        Yii::app()->end();
+    }
+    */
+
+    if(isset($_POST['Users']))
+    {
+        $model->attributes=$_POST['Users'];
+        if($model->save()){
+               
+				Yii::app()->authManager->assign("empleado",$model->id);
+				
+
+				$this->redirect(array('view','id'=>$model->id));
+
+             }
+    }
+    $this->render('empleado',array('model'=>$model));
+}
 
 	/**
 	 * Updates a particular model.
@@ -87,6 +137,7 @@ class UsersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$params["user"]=$model;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -94,8 +145,21 @@ class UsersController extends Controller
 		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
+
+			
+			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+
+			//Acá se podría el OR para agregar el acceso también al director.
+			
+			{	
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+		
+			}else{
+
+				throw new CHttpException(500,'You are not authorized to perform this action');
+			}
 		}
 
 		$this->render('update',array(
@@ -122,6 +186,7 @@ class UsersController extends Controller
 	 */
 	public function actionIndex()
 	{
+		 //Yii::app()->authManager->createRole("cliente");
 		$dataProvider=new CActiveDataProvider('Users');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -143,6 +208,8 @@ class UsersController extends Controller
 		));
 	}
 
+	
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -157,6 +224,8 @@ class UsersController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+
 
 	/**
 	 * Performs the AJAX validation.

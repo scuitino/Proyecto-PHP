@@ -1,5 +1,5 @@
-/assets/*
-/protected/runtimes/*
-/protected/extensions/yii-debug-toolbar/
+Aplicacion/assets/*
+Aplicacion/protected/runtimes/*
+Aplicacion/protected/extensions/yii-debug-toolbar/
 
 
