@@ -53,15 +53,7 @@ return array(
 			'responsiveCss' => true,
         ),
 
-        'log'=>array(
-        'class'=>'CLogRouter',
-        'routes'=>array(
-            array(
-                'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-                'ipFilters'=>array('127.0.0.1','192.168.1.215'),
-            ),
-        ),
-    	),
+       
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -85,6 +77,8 @@ return array(
 			'password' => 'stemcol',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
+			'enableProfiling'=>true,
+	    	'enableParamLogging'=>true,
 		),
 		
 		'errorHandler'=>array(
@@ -106,6 +100,18 @@ return array(
 				*/
 			),
 		),
+
+		 'log'=>array(
+	        'class'=>'CLogRouter',
+	        'routes'=>array(
+	            array(
+	                'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+	                // Access is restricted by default to the localhost
+	                'ipFilters'=>array('127.0.0.1','192.168.1.*'),
+	            ),
+	        ),
+	    ),
+
 	),
 
 	// application-level parameters that can be accessed
