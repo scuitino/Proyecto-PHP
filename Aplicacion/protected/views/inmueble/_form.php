@@ -37,17 +37,25 @@
 		<?php echo $form->error($model,'precioInmueble'); ?>
 	</div>
 
-	<!-- <div class="row">
-		<?php echo $form->labelEx($model,'destacadoInmueble'); ?>
-		<?php echo $form->textField($model,'destacadoInmueble'); ?>
-		<?php echo $form->error($model,'destacadoInmueble'); ?>
+	 <div class="row">
+		<?php 
+		if ((Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id))||
+			(Yii::app()->authManager->checkAccess("director",Yii::app()->user->id))){ 
+		 echo $form->labelEx($model,'destacadoInmueble');
+		 echo $form->dropDownList($model, 'destacadoInmueble', array('1' => 'Destacado', '0' => 'No Destacado'));; 
+		 echo $form->error($model,'destacadoInmueble'); 
+		} ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'estadoInmueble'); ?>
-		<?php echo $form->textField($model,'estadoInmueble'); ?>
-		<?php echo $form->error($model,'estadoInmueble'); ?>
-	</div> -->
+		<?php
+		if ((Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id))||
+			(Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)))	{
+		echo $form->labelEx($model,'estadoInmueble'); 
+		echo $form->dropDownList($model, 'estadoInmueble', array('1' => 'Aprobado', '0' => 'Pendiente'));
+		echo $form->error($model,'estadoInmueble'); 
+	}?>
+	</div> 
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'habitacionesInmueble'); ?>
@@ -91,9 +99,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Usuario_id'); ?>
-		<?php echo $form->textField($model,'Usuario_id'); ?>
-		<?php echo $form->error($model,'Usuario_id'); ?>
+		<?php
+			if ((Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id))||
+			(Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)))	{
+		echo $form->labelEx($model,'Usuario_id'); 
+		echo $form->textField($model,'Usuario_id'); 
+		echo $form->error($model,'Usuario_id'); 
+	} ?>
 	</div>
 
 	<!-- <div class="row">
