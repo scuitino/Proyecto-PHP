@@ -1,25 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "Imagen".
+ * This is the model class for table "Evento".
  *
- * The followings are the available columns in table 'Imagen':
- * @property integer $idImagen
- * @property string $urlImagen
+ * The followings are the available columns in table 'Evento':
+ * @property integer $idEvento
  * @property integer $Inmueble_idInmueble
- * @property integer $portadaImagen
+ * @property string $fechaEvento
+ * @property string $descripcionEvento
+ * @property integer $Usuario_id
  *
  * The followings are the available model relations:
  * @property Inmueble $inmuebleIdInmueble
+ * @property User $usuario
  */
-class Imagen extends CActiveRecord
+class Evento extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'Imagen';
+		return 'Evento';
 	}
 
 	/**
@@ -30,12 +32,12 @@ class Imagen extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Inmueble_idInmueble', 'required'),
-			array('Inmueble_idInmueble, portadaImagen', 'numerical', 'integerOnly'=>true),
-			array('urlImagen', 'length', 'max'=>45),
+			array('Inmueble_idInmueble, Usuario_id', 'required'),
+			array('Inmueble_idInmueble, Usuario_id', 'numerical', 'integerOnly'=>true),
+			array('fechaEvento, descripcionEvento', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idImagen, urlImagen, Inmueble_idInmueble, portadaImagen', 'safe', 'on'=>'search'),
+			array('idEvento, Inmueble_idInmueble, fechaEvento, descripcionEvento, Usuario_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,6 +50,7 @@ class Imagen extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'inmuebleIdInmueble' => array(self::BELONGS_TO, 'Inmueble', 'Inmueble_idInmueble'),
+			'usuario' => array(self::BELONGS_TO, 'User', 'Usuario_id'),
 		);
 	}
 
@@ -57,10 +60,11 @@ class Imagen extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idImagen' => 'Id Imagen',
-			'urlImagen' => 'Url Imagen',
+			'idEvento' => 'Id Evento',
 			'Inmueble_idInmueble' => 'Inmueble Id Inmueble',
-			'portadaImagen' => 'Portada Imagen',
+			'fechaEvento' => 'Fecha Evento',
+			'descripcionEvento' => 'Descripcion Evento',
+			'Usuario_id' => 'Usuario',
 		);
 	}
 
@@ -82,10 +86,11 @@ class Imagen extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('idImagen',$this->idImagen);
-		$criteria->compare('urlImagen',$this->urlImagen,true);
+		$criteria->compare('idEvento',$this->idEvento);
 		$criteria->compare('Inmueble_idInmueble',$this->Inmueble_idInmueble);
-		$criteria->compare('portadaImagen',$this->portadaImagen);
+		$criteria->compare('fechaEvento',$this->fechaEvento,true);
+		$criteria->compare('descripcionEvento',$this->descripcionEvento,true);
+		$criteria->compare('Usuario_id',$this->Usuario_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,7 +101,7 @@ class Imagen extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Imagen the static model class
+	 * @return Evento the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
