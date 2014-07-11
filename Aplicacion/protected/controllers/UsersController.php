@@ -29,7 +29,7 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','create','index'),
+				'actions'=>array('create','index'),
 				'users'=>array('*'),
 			),
 			array('allow', 
@@ -144,15 +144,17 @@ class UsersController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
+
 		{
-			$model->attributes=$_POST['Users'];
+			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)){
+			//$model->attributes=$_POST['Users'];
 
 			
-			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+			
 
 			//Acá se podría el OR para agregar el acceso también al director.
 			
-			{	
+				
 
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

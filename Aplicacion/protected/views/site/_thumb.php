@@ -5,9 +5,11 @@
             <h3><?php echo CHtml::encode($data->tituloInmueble); ?></h3>
             <p><?php echo CHtml::encode($data->descripcionInmueble) ?></p>
             <?php $inmuebleID=$data->idInmueble ?>
-            <p><a class="btn btn-primary" <?php echo  "<a href='index.php/inmueble/$inmuebleID'>Ver mas</a>";?> 
+            <p><a class="btn btn-primary" 
+                <?php echo  "<a href='index.php/inmueble/$inmuebleID'>Ver mas</a>";?> 
 
-             <a href="#" class="btn btn-default" role="button">Me Interesa</a></p>
+             <a class="btn btn-default" role="button"> 
+                <?php echo  "<a href='index.php/contacto/create'>Me Interesa</a></p>";?>
         </div>
     </div>
 </div>

@@ -6,7 +6,7 @@ $this->pageTitle="Inmobiliaria House";
 ?>
 <?php 
 // Aca armo el listado de imagenes
- echo "Hola";
+ 
     echo CHtml::openTag('div', array('class' => 'row-fluid'));
     $this->widget(
     'bootstrap.widgets.TbThumbnails',
