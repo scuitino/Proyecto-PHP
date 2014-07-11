@@ -104,34 +104,10 @@ $this->widget(
                 // array('label'=>'Settings', 'icon'=>'cog', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
                 array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
             ),
-        )); 
-
-
-
-        ?>
-        <?php $this->widget('zii.widgets.CListView', array(
-            'dataProvider'=>$dataProvider->search(),
-            'itemView'=>'_view',
-                'enableHistory' => TRUE,
-                'pagerCssClass' => "pagination",
-                'id' => 'ajaxListView',
         )); ?>
 
 	<div id="mainmenu">
-        <div class="form">
-            <?php echo CHtml::beginForm('', 'get', array('id'=>'searchform')); ?>
-
-            <div class="row">
-                <?php echo CHtml::activeLabel($dataProvider,'id'); ?>
-                <?php echo CHtml::activeTextField($dataProvider,'id') ?>
-            </div>
-
-            <div class="row">
-                <?php echo CHtml::activeLabel($dataProvider,'fname'); ?>
-                <?php echo CHtml::activeTextField($dataProvider,'fname') ?>
-
-            <?php echo CHtml::endForm(); ?>
-        </div><!-- form -->		
+		
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
