@@ -25,16 +25,33 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
+	// public function actionIndex()
+	// {
+	// 	// renders the view file 'protected/views/site/index.php'
+	// 	// using the default layout 'protected/views/layouts/main.php'
+	// 	$dataProvider=new CActiveDataProvider('Inmueble');
+	// 	$this->render('index',array(
+	// 		'dataProvider'=>$dataProvider,
+	// 	));
+		
+	// }
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$dataProvider=new CActiveDataProvider('Inmueble');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
+	        $model=new Test1('search');
+	        $model->unsetAttributes();  // clear any default values
+	        if(isset($_GET['Test1']))
+	            $model->attributes=$_GET['Test1'];
 
+	        if(isset($_GET['ajax']) && $_GET['ajax']=='ajaxListView')   {
+	            $this->renderPartial('index',array(
+	                'dataProvider'=>$model,
+	            ));
+	        } else  {
+	            $this->render('index',array(
+	                'dataProvider'=>$model,
+	            ));
+	        }    
+	}
 
 	public function action_img_view(){ 
 		$dataProvider=new CActiveDataProvider('Inmueble');

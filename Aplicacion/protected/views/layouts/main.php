@@ -31,37 +31,36 @@
 $this->widget(
     'bootstrap.widgets.TbNavbar',
     array(
-        'type' => null,//'inverse',
+        'type' => 'inverse',
         'brand' => 'Inmobiliaria House',
-        'brandUrl' => '#',
+        'brandUrl' =>Yii::app()->request->baseUrl,
         'collapse' => true, // requires bootstrap-responsive.css
         'fixed' => false,
-        'items' => array(
+        'items' => array( 
             array(
                 'class' => 'bootstrap.widgets.TbMenu',
                 'items' => array(
 
-                    array('label'=>'Inicio', 'url'=>array('site/index')),
-                    array('label' => 'Registro', 'url'=>array('users/create')),
-                    array(
-                        'label' => 'Barrios',
-                        'url' => '#',
-                        'items' => array(
-                            array('label' => 'Buceo', 'url' => '#'),
-                            array('label' => 'Malvin', 'url' => '#'),
-                            array(
-                                'label' => 'Cordon',
-                                'url' => '#'
-                            ),
-                            '---',
-                            array('label' => 'NAV HEADER'),
-                            array('label' => 'Separated link', 'url' => '#'),
-                            array(
-                                'label' => 'One more separated link',
-                                'url' => '#'
-                            ),
-                        )
-                    ),
+                  
+                    // array(
+                    //     'label' => 'Barrios',
+                    //     'url' => '#',
+                    //     'items' => array(
+                    //         array('label' => 'Buceo', 'url' => '#'),
+                    //         array('label' => 'Malvin', 'url' => '#'),
+                    //         array(
+                    //             'label' => 'Cordon',
+                    //             'url' => '#'
+                    //         ),
+                    //         '---',
+                    //         array('label' => 'NAV HEADER'),
+                    //         array('label' => 'Separated link', 'url' => '#'),
+                    //         array(
+                    //             'label' => 'One more separated link',
+                    //             'url' => '#'
+                    //         ),
+                    //     )
+                    // ),
                 ),
             ),
             '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
@@ -69,30 +68,70 @@ $this->widget(
                 'class' => 'bootstrap.widgets.TbMenu',
                 'htmlOptions' => array('class' => 'pull-right'),
                 'items' => array(
+                    array('label' => 'Registro', 'url'=>array('users/create'), 'visible'=>Yii::app()->user->isGuest),
                     array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                     array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest),
                     '---',
-                    array(
-                        'label' => 'Admin',
-                        'url' => '#',
-                        'items' => array(
-                            array('label' => 'Lista de Usuarios', 'url'=>array('users/admin')),
-                            array('label' => 'Lista de Inmuebles', 'url'=>array('inmueble/admin')),
+                    // array(
+                    //     'label' => 'Admin',
+                    //     'url' => '#',
+                    //     'items' => array(
+                    //         array('label' => 'Lista de Usuarios', 'url'=>array('users/admin')),
+                    //         array('label' => 'Lista de Inmuebles', 'url'=>array('inmueble/admin')),
                             
-                            '---',
-                            array('label' => 'Separated link', 'url' => '#'),
-                        )
-                    ),
+                    //         '---',
+                    //         array('label' => 'Separated link', 'url' => '#'),
+                    //     )
+                    // ),
                 ),
             ),
         ),
     )
 );
 ?>
-	
+
+        <?php $this->widget('bootstrap.widgets.TbMenu', array(
+            
+            'htmlOptions' => array('class' => 'pull-right'),
+            'type'=>'list',
+            'items'=>array(
+                array('label'=>'MENU','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Inicio', 'icon'=>'home', 'url'=>'#', 'active'=>true,'visible'=>!Yii::app()->user->isGuest,),
+                //array('label'=>'Mis Inmuebles', 'icon'=>'book', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+                array('label'=>'AJUSTES','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Editar Perfil', 'icon'=>'pencil', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+                // array('label'=>'Profile', 'icon'=>'user', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest),),
+                // array('label'=>'Settings', 'icon'=>'cog', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+            ),
+        )); 
+
+
+
+        ?>
+        <?php $this->widget('zii.widgets.CListView', array(
+            'dataProvider'=>$dataProvider->search(),
+            'itemView'=>'_view',
+                'enableHistory' => TRUE,
+                'pagerCssClass' => "pagination",
+                'id' => 'ajaxListView',
+        )); ?>
 
 	<div id="mainmenu">
-		
+        <div class="form">
+            <?php echo CHtml::beginForm('', 'get', array('id'=>'searchform')); ?>
+
+            <div class="row">
+                <?php echo CHtml::activeLabel($dataProvider,'id'); ?>
+                <?php echo CHtml::activeTextField($dataProvider,'id') ?>
+            </div>
+
+            <div class="row">
+                <?php echo CHtml::activeLabel($dataProvider,'fname'); ?>
+                <?php echo CHtml::activeTextField($dataProvider,'fname') ?>
+
+            <?php echo CHtml::endForm(); ?>
+        </div><!-- form -->		
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
