@@ -1,3 +1,4 @@
+
 <?php
 
 class InmuebleController extends Controller
@@ -96,13 +97,18 @@ class InmuebleController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$params["inmueble"]=$model;
+			
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Inmueble']))
 		{
-			$model->attributes=$_POST['Inmueble'];
+			$model->attributes=$_POST['Inmueble']; 
+
+			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)))
+
+			{
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idInmueble));
 		}
@@ -110,6 +116,7 @@ class InmuebleController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+	}
 	}
 
 	/**

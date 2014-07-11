@@ -4,7 +4,10 @@
         <div class="caption">
             <h3><?php echo CHtml::encode($data->tituloInmueble); ?></h3>
             <p><?php echo CHtml::encode($data->descripcionInmueble) ?></p>
-            <p><a href="index.php/inmueble/_view" class="btn btn-primary" role="button">Ver</a> <a href="#" class="btn btn-default" role="button">Votar</a></p>
+            <?php $inmuebleID=$data->idInmueble ?>
+            <p><a class="btn btn-primary" <?php echo  "<a href='index.php/inmueble/$inmuebleID'>Ver mas</a>";?> 
+
+             <a href="#" class="btn btn-default" role="button">Me Interesa</a></p>
         </div>
     </div>
 </div>

@@ -1,7 +1,6 @@
-
 <?php
 
-class UsersController extends Controller
+class EventoController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -29,11 +28,11 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','create','index'),
+				'actions'=>array('index'),
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('update'),
+				'actions'=>array('index','create','update'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
@@ -42,7 +41,7 @@ class UsersController extends Controller
 			),
 
 			array('allow',
-				'actions'=>array('index','admin','delete','update','create','view','empleado'),
+				'actions'=>array('index','admin','delete','update','create','view'),
 				'roles'=>array('director'),
 			),
 
@@ -69,66 +68,22 @@ class UsersController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Users;
+		$model=new Evento;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Users']))
+		if(isset($_POST['Evento']))
 		{
-
-			$model->attributes=$_POST['Users'];
-			if($model->save()){
-               
-               //aca creo el rol
-				//Yii::app()->authManager->createRole("registrado");
-				Yii::app()->authManager->createRole("empleado");
-				//Yii::app()->authManager->createRole("director");
-
-				//Asigno rol
-
-				Yii::app()->authManager->assign("registrado",$model->id);
-				Yii::app()->authManager->assign("empleado",$model->id);
-				//Yii::app()->authManager->assign("director",$model->id);
-
-				$this->redirect(array('view','id'=>$model->id));
-
-             }
-             
+			$model->attributes=$_POST['Evento'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->idEvento));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-
-	public function actionEmpleado()
-{
-    $model=new Users('register');
-
-    // uncomment the following code to enable ajax-based validation
-    /*
-    if(isset($_POST['ajax']) && $_POST['ajax']==='users-empleado-form')
-    {
-        echo CActiveForm::validate($model);
-        Yii::app()->end();
-    }
-    */
-
-    if(isset($_POST['Users']))
-    {
-        $model->attributes=$_POST['Users'];
-        if($model->save()){
-               
-				Yii::app()->authManager->assign("empleado",$model->id);
-				
-
-				$this->redirect(array('view','id'=>$model->id));
-
-             }
-    }
-    $this->render('empleado',array('model'=>$model));
-}
 
 	/**
 	 * Updates a particular model.
@@ -138,29 +93,15 @@ class UsersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$params["user"]=$model;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Users']))
+		if(isset($_POST['Evento']))
 		{
-			$model->attributes=$_POST['Users'];
-
-			
-			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
-
-			//Acá se podría el OR para agregar el acceso también al director.
-			
-			{	
-
+			$model->attributes=$_POST['Evento'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		
-			}else{
-
-				throw new CHttpException(500,'You are not authorized to perform this action');
-			}
+				$this->redirect(array('view','id'=>$model->idEvento));
 		}
 
 		$this->render('update',array(
@@ -187,8 +128,7 @@ class UsersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		 //Yii::app()->authManager->createRole("cliente");
-		$dataProvider=new CActiveDataProvider('Users');
+		$dataProvider=new CActiveDataProvider('Evento');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -199,42 +139,38 @@ class UsersController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Users('search');
+		$model=new Evento('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Users']))
-			$model->attributes=$_GET['Users'];
+		if(isset($_GET['Evento']))
+			$model->attributes=$_GET['Evento'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
 
-	
-
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Users the loaded model
+	 * @return Evento the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Users::model()->findByPk($id);
+		$model=Evento::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
 
-
-
 	/**
 	 * Performs the AJAX validation.
-	 * @param Users $model the model to be validated
+	 * @param Evento $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='users-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='evento-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
