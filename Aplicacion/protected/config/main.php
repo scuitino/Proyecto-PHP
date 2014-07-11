@@ -73,8 +73,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=nueva',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'stemcol',
+			'username' => 'admin',
+			'password' => 'admin',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 			'enableProfiling'=>true,

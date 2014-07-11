@@ -42,26 +42,26 @@ $this->widget(
                 'items' => array(
 
                     array('label'=>'Inicio', 'url'=>array('site/index')),
-                    array('label' => 'Registro', 'url'=>array('users/create'), 'visible'=>Yii::app()->user->isGuest),
-                    // array(
-                    //     'label' => 'Barrios',
-                    //     'url' => '#',
-                    //     'items' => array(
-                    //         array('label' => 'Buceo', 'url' => '#'),
-                    //         array('label' => 'Malvin', 'url' => '#'),
-                    //         array(
-                    //             'label' => 'Cordon',
-                    //             'url' => '#'
-                    //         ),
-                    //         '---',
-                    //         array('label' => 'NAV HEADER'),
-                    //         array('label' => 'Separated link', 'url' => '#'),
-                    //         array(
-                    //             'label' => 'One more separated link',
-                    //             'url' => '#'
-                    //         ),
-                    //     )
-                    // ),
+                    array('label' => 'Registro', 'url'=>array('users/create')),
+                    array(
+                        'label' => 'Barrios',
+                        'url' => '#',
+                        'items' => array(
+                            array('label' => 'Buceo', 'url' => '#'),
+                            array('label' => 'Malvin', 'url' => '#'),
+                            array(
+                                'label' => 'Cordon',
+                                'url' => '#'
+                            ),
+                            '---',
+                            array('label' => 'NAV HEADER'),
+                            array('label' => 'Separated link', 'url' => '#'),
+                            array(
+                                'label' => 'One more separated link',
+                                'url' => '#'
+                            ),
+                        )
+                    ),
                 ),
             ),
             '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
@@ -73,8 +73,7 @@ $this->widget(
                     array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest),
                     '---',
                     array(
-                        'label' => 'Acciones',
-                        'visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),
+                        'label' => 'Admin',
                         'url' => '#',
                         'items' => array(
                             array('label' => 'Lista de Usuarios', 'url'=>array('users/admin')),
@@ -90,7 +89,7 @@ $this->widget(
     )
 );
 ?>
-
+	
 
 	<div id="mainmenu">
 		
