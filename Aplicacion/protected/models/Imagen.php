@@ -8,6 +8,9 @@
  * @property string $urlImagen
  * @property integer $Inmueble_idInmueble
  * @property integer $portadaImagen
+ *
+ * The followings are the available model relations:
+ * @property Inmueble $inmuebleIdInmueble
  */
 class Imagen extends CActiveRecord
 {
@@ -44,6 +47,7 @@ class Imagen extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'inmuebleIdInmueble' => array(self::BELONGS_TO, 'Inmueble', 'Inmueble_idInmueble'),
 		);
 	}
 
