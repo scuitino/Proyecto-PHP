@@ -33,7 +33,7 @@ class InmuebleController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','MisInmuebles'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
@@ -104,19 +104,26 @@ class InmuebleController extends Controller
 
 		if(isset($_POST['Inmueble']))
 		{
-			$model->attributes=$_POST['Inmueble']; 
+			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))){
+			//$model->attributes=$_POST['Inmueble']; 
 
-			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)))
+			
 
-			{
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idInmueble));
-		}
 
+			}else{
+
+				throw new CHttpException(500,'You are not authorized to perform this action');
+			}
+		
+
+}
 		$this->render('update',array(
 			'model'=>$model,
 		));
-	}
+	
 	}
 
 	/**
@@ -173,6 +180,26 @@ class InmuebleController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+	public function actionMisInmuebles()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		$UsuarioID=Yii::app()->user->id;
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'Usuario_id=:UsuarioID';
+		$criteria->params= array(':UsuarioID'=>$UsuarioID);
+		$dataProvider=new CActiveDataProvider('Inmueble', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('MisInmuebles',array(
+			'dataProvider'=>$dataProvider,
+		));		
+
+	}
+
 
 	/**
 	 * Performs the AJAX validation.

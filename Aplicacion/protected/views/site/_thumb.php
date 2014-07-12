@@ -6,10 +6,9 @@
             <p><?php echo CHtml::encode($data->descripcionInmueble) ?></p>
             <?php $inmuebleID=$data->idInmueble ?>
             <p><a class="btn btn-primary" 
-                <?php echo  "<a href='index.php/inmueble/$inmuebleID'>Ver mas</a>";?> 
+                <?php echo  "<a href='/Proyecto-PHP/Aplicacion/index.php/inmueble/$inmuebleID'>Ver mas</a>";?> 
 
-             <a class="btn btn-default" role="button"> 
-                <?php echo  "<a href='index.php/contacto/create'>Me Interesa</a></p>";?>
+           
         </div>
     </div>
 </div>

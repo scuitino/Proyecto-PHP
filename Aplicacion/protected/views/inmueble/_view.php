@@ -29,10 +29,6 @@
 	<?php echo CHtml::encode($data->estadoInmueble); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('estadoInmueble')); ?>:</b>
-	<?php echo CHtml::encode($data->estadoInmueble); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('habitacionesInmueble')); ?>:</b>
 	<?php echo CHtml::encode($data->habitacionesInmueble); ?>
 	<br />
