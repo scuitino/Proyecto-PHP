@@ -4,6 +4,7 @@
 $this->pageTitle="Inmobiliaria House";
 
 ?>
+<H3><strong> Inmuebles Destacados:</strong></H3>
 <?php 
 // Aca armo el listado de imagenes
 

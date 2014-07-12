@@ -91,7 +91,7 @@ $this->widget(
     )
 );
 ?>
-<H3><strong> Inmuebles Destacados:</strong></H3>
+
 
         <?php $this->widget('bootstrap.widgets.TbMenu', array(
             
