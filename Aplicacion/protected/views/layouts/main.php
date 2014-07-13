@@ -92,7 +92,7 @@ $this->widget(
 );
 ?>
 
-
+<?php $UserID=Yii::app()->user->id ?>
         <?php $this->widget('bootstrap.widgets.TbMenu', array(
             
             'htmlOptions' => array('class' => 'pull-right'),
@@ -104,6 +104,7 @@ $this->widget(
                 array('label'=>'Gestion de Empleados', 'icon'=>'flag', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users', 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)),
                 array('label'=>'Mis Inmuebles', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/MisInmuebles','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
                  array('label'=>'Crear Inmueble', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+                  array('label'=>'Editar Perfil', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
                //  array('label'=>'AJUSTES','visible'=>!Yii::app()->user->isGuest,),
                //  array('label'=>'Editar Perfil', 'icon'=>'pencil', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
                //  // array('label'=>'Profile', 'icon'=>'user', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest),),

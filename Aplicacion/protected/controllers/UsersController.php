@@ -33,11 +33,11 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('update'),
+				'actions'=>array('update', 'view'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','admin','delete','update'),
+				'actions'=>array('index','admin','delete','update','view'),
 				'roles'=>array('empleado'),
 			),
 
@@ -82,13 +82,13 @@ class UsersController extends Controller
                
                //aca creo el rol
 				//Yii::app()->authManager->createRole("registrado");
-				Yii::app()->authManager->createRole("empleado");
-				//Yii::app()->authManager->createRole("director");
+				// Yii::app()->authManager->createRole("empleado");
+				// Yii::app()->authManager->createRole("director");
 
 				//Asigno rol
 
-				Yii::app()->authManager->assign("registrado",$model->id, $model->rol='registrado');
-				Yii::app()->authManager->assign("empleado",$model->id, $model->rol='empleado');
+				Yii::app()->authManager->assign("registrado",$model->id);
+				//Yii::app()->authManager->assign("empleado",$model->id);
 				//Yii::app()->authManager->assign("director",$model->id);
 
 				$this->redirect(array('view','id'=>$model->id));
@@ -164,8 +164,12 @@ class UsersController extends Controller
 		if(isset($_POST['Users']))
 
 		{
-			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)){
-			//$model->attributes=$_POST['Users'];
+			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
+			 ||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)
+ 				||Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+
+ 				{
+ 					$model->attributes=$_POST['Users'];
 
 			
 			
