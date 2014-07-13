@@ -29,15 +29,15 @@ class InmuebleController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','index'),
+				'actions'=>array('view','index','busqueda'),
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('create','update','MisInmuebles'),
+				'actions'=>array('create','update','MisInmuebles','view'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','create','admin','delete','update'),
+				'actions'=>array('index','create','admin','delete','update','view'),
 				'roles'=>array('empleado'),
 			),
 
@@ -97,15 +97,18 @@ class InmuebleController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$params["inmueble"]=$model;
+		$params["inmuebles"]=$model;
 			
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Inmueble']))
 		{
-			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))){
-			//$model->attributes=$_POST['Inmueble']; 
+			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
+			||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)	
+			||Yii::app()->authManager->checkAccess("updateOwnInmueble",Yii::app()->user->id,$params))
+			{
+			$model->attributes=$_POST['Inmueble']; 
 
 			
 
@@ -115,7 +118,7 @@ class InmuebleController extends Controller
 
 			}else{
 
-				throw new CHttpException(500,'You are not authorized to perform this action');
+			throw new CHttpException(500,'You are not authorized to perform this action');
 			}
 		
 
@@ -200,6 +203,20 @@ class InmuebleController extends Controller
 
 	}
 
+	/**
+	 * Búsqueda del usuario.
+	 */
+	public function actionBusqueda()
+	{
+		$model=new Inmueble('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Inmueble']))
+			$model->attributes=$_GET['Inmueble'];
+
+		$this->render('busqueda',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Performs the AJAX validation.

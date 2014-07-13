@@ -98,19 +98,28 @@ $this->widget(
             'htmlOptions' => array('class' => 'pull-right'),
             'type'=>'list',
             'items'=>array(
-                array('label'=>'MENU','visible'=>!Yii::app()->user->isGuest,),
-                array('label'=>'Gestion de Inmuebles', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble', 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
-                 array('label'=>'Gestion de Clientes', 'icon'=>'flag', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users', 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
-                array('label'=>'Gestion de Empleados', 'icon'=>'flag', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users', 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)),
+                array('label'=>'MENU:','visible'=>!Yii::app()->user->isGuest,),
+
+                array('label'=>'Gestion de Inmuebles:','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Crear Inmueble', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>!Yii::app()->user->isGuest),//Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                array('label'=>'Administrar Inmuebles', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/admin','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+
+
+                array('label'=>'Gestion de Clientes:','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Crear Cliente', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                 array('label'=>'Administrar Clientes', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/listarClientes','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+
+
+                array('label'=>'Gestion de Empleados:','visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                 array('label'=>'Crear Empleado', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/empleado','visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                 array('label'=>'Administrar Empleados', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/listarEmpleados','visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+
+
+               
                 array('label'=>'Mis Inmuebles', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/MisInmuebles','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
-                 array('label'=>'Crear Inmueble', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
-                  array('label'=>'Editar Perfil', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
-               //  array('label'=>'AJUSTES','visible'=>!Yii::app()->user->isGuest,),
-               //  array('label'=>'Editar Perfil', 'icon'=>'pencil', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
-               //  // array('label'=>'Profile', 'icon'=>'user', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest),),
-               //  // array('label'=>'Settings', 'icon'=>'cog', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
-               // // array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
-                // array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                array('label'=>'Editar Perfil', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+
+
            
             ),
         )); ?>

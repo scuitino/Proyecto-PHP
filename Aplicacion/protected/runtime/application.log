@@ -9370,3 +9370,208 @@ Stack trace:
 REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
 HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
 ---
+2014/07/13 17:07:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/$U...')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/create
+---
+2014/07/13 17:08:43 [warning] [application] Failed to set unsafe attribute "operacion" of "Inmueble".
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (111)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 17:08:43 [warning] [application] Failed to set unsafe attribute "tipoInmueble" of "Inmueble".
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (111)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 17:08:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('inmueble/admin')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/admin
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/5
+---
+2014/07/13 17:09:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/$U...')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/5
+---
+2014/07/13 17:16:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/$U...')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 17:18:31 [warning] [application] Failed to set unsafe attribute "operacion" of "Inmueble".
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (111)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 17:18:31 [warning] [application] Failed to set unsafe attribute "tipoInmueble" of "Inmueble".
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (111)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 17:56:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "listarClientes".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('listarClientes')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('listarClientes')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/listarCli...')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/18
+---
+2014/07/13 17:58:16 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->authManager->checkAccess("empleado",Yii::app()->user->id)' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_user` `t` WHERE Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id).
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/users/ListarEmpleados.php (20)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/UsersController.php (130)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 17:58:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->authManager->checkAccess("empleado",Yii::app()->user->id)' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_user` `t` WHERE Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)' in /var/www/Proyecto-PHP/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/Proyecto-PHP/framework/db/ar/CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 /var/www/Proyecto-PHP/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/Proyecto-PHP/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/Proyecto-PHP/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/Proyecto-PHP/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/Proyecto-PHP/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#7 /var/www/Proyecto-PHP/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#8 /var/www/Proyecto-PHP/framework/web/CBaseController.php(147): CListView->init()
+#9 /var/www/Proyecto-PHP/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 /var/www/Proyecto-PHP/Aplicacion/protected/views/users/ListarEmpleados.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 /var/www/Proyecto-PHP/framework/web/CBaseController.php(126): require('/var/www/Proyec...')
+#12 /var/www/Proyecto-PHP/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/Proyec...', Array, true)
+#13 /var/www/Proyecto-PHP/framework/web/CController.php(869): CBaseController->renderFile('/var/www/Proyec...', Array, true)
+#14 /var/www/Proyecto-PHP/framework/web/CController.php(782): CController->renderPartial('ListarEmpleados', Array, true)
+#15 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/UsersController.php(130): CController->render('ListarEmpleados', Array)
+#16 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): UsersController->actionlistarEmpleados()
+#17 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('listarEmpleados')
+#26 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/listarEmp...')
+#27 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarEmpleados
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/admin
+---
+2014/07/13 18:13:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('listarClientes')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/listarCli...')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/15
+---
+2014/07/13 18:13:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('listarClientes')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/listarCli...')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/listarEmpleados
+---
+2014/07/13 18:15:09 [error] [exception.CException] exception 'CException' with message 'UsersController cannot find the requested view "ListarClientes".' in /var/www/Proyecto-PHP/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(782): CController->renderPartial('ListarClientes', Array, true)
+#1 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/UsersController.php(149): CController->render('ListarClientes', Array)
+#2 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): UsersController->actionlistarClientes()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('listarClientes')
+#12 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/listarCli...')
+#13 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
+---
+2014/07/13 18:18:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('listarClientes')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/listarCli...')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/admin
+---
