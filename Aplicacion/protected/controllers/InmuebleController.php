@@ -70,22 +70,43 @@ class InmuebleController extends Controller
 	public function actionCreate()
 	{
 		$model=new Inmueble;
+		$modelImage = new Imagen;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Inmueble']))
+		if(isset($_POST['Inmueble'],$_POST['Imagen']))
 		{
 			$model->attributes=$_POST['Inmueble'];
+			// $modelImage->Inmueble_idInmueble = $model->idInmueble;
+			// $modelImage->portadaImagen = false;
+			
+			//$modelImage=CUploadedFile::getInstance($modelImage,'image');
+   //                      $fileName = $uploadedFile;
+   //                      $modelImage->urlImagen = $fileName;
+
+			$uploadedFile=CUploadedFile::getInstance($modelImage,'image');
+                        $fileName = $uploadedFile;
+                        $model->Imagen_Id = $fileName;
+
+            $modelImage->urlImagen = '/images/'.$fileName;
+            $modelImage->Inmueble_idInmueble= $model->idInmueble;
+            $modelImage->portadaImagen=false;
+
 			$model->destacadoInmueble=0;
 			$model->estadoInmueble=0;
 			$model->Usuario_id=Yii::app()->user->id;
-			if($model->save())
+		if ($modelImage->save()){
+			if($model->save()){
+				$uploadedFile->saveAs('/var/www'.Yii::app()->baseUrl.'/images/'.$uploadedFile->getname(),true); 
 				$this->redirect(array('view','id'=>$model->idInmueble));
+			}
 		}
+	}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'modelImage'=>$modelImage,
 		));
 	}
 

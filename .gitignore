@@ -1,5 +1,7 @@
 Aplicacion/assets/*
 Aplicacion/protected/runtimes/*
 Aplicacion/protected/extensions/yii-debug-toolbar/
+Aplicacion/images/*
+Aplicacion/themes/*
 
 

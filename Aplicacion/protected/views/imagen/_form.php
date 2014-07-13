@@ -13,7 +13,23 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-)); ?>
+));
+$form = $this->beginWidget(
+    'CActiveForm',
+    array(
+        'id' => 'upload-form',
+        'enableAjaxValidation' => false,
+        'htmlOptions' => array('enctype' => 'multipart/form-data'),
+    )
+);
+// ...
+echo $form->labelEx($model, 'image');
+echo $form->fileField($model, 'image');
+echo $form->error($model, 'image');
+// ...
+echo CHtml::submitButton('Submit');
+$this->endWidget();
+ ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -40,6 +56,7 @@
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+
 
 <?php $this->endWidget(); ?>
 
