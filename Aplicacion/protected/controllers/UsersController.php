@@ -87,8 +87,8 @@ class UsersController extends Controller
 
 				//Asigno rol
 
-				Yii::app()->authManager->assign("registrado",$model->id);
-				Yii::app()->authManager->assign("empleado",$model->id);
+				Yii::app()->authManager->assign("registrado",$model->id, $model->rol='registrado');
+				Yii::app()->authManager->assign("empleado",$model->id, $model->rol='empleado');
 				//Yii::app()->authManager->assign("director",$model->id);
 
 				$this->redirect(array('view','id'=>$model->id));
