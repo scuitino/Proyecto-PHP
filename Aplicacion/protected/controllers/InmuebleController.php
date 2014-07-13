@@ -29,7 +29,7 @@ class InmuebleController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','index'),
+				'actions'=>array('view','index','busqueda'),
 				'users'=>array('*'),
 			),
 			array('allow', 
@@ -203,6 +203,20 @@ class InmuebleController extends Controller
 
 	}
 
+	/**
+	 * Búsqueda del usuario.
+	 */
+	public function actionBusqueda()
+	{
+		$model=new Inmueble('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Inmueble']))
+			$model->attributes=$_GET['Inmueble'];
+
+		$this->render('busqueda',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Performs the AJAX validation.
