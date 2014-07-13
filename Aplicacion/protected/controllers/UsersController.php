@@ -79,6 +79,8 @@ class UsersController extends Controller
 		{
 
 			$model->attributes=$_POST['Users'];
+			$model->rol="registrado";
+
 			if($model->save()){
                
                //aca creo el rol
@@ -87,7 +89,7 @@ class UsersController extends Controller
 				//Yii::app()->authManager->createRole("director");
 
 				//Asigno rol
-
+                
 				Yii::app()->authManager->assign("registrado",$model->id);
 				//Yii::app()->authManager->assign("empleado",$model->id);
 				//Yii::app()->authManager->assign("director",$model->id);
@@ -137,6 +139,8 @@ class UsersController extends Controller
     if(isset($_POST['Users']))
     {
         $model->attributes=$_POST['Users'];
+        $model->rol="empleado";
+
         if($model->save()){
                
 				Yii::app()->authManager->assign("empleado",$model->id);
