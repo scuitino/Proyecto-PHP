@@ -82,13 +82,13 @@ class UsersController extends Controller
                
                //aca creo el rol
 				//Yii::app()->authManager->createRole("registrado");
-				Yii::app()->authManager->createRole("empleado");
+				//Yii::app()->authManager->createRole("empleado");
 				//Yii::app()->authManager->createRole("director");
 
 				//Asigno rol
 
 				Yii::app()->authManager->assign("registrado",$model->id);
-				Yii::app()->authManager->assign("empleado",$model->id);
+				//Yii::app()->authManager->assign("empleado",$model->id);
 				//Yii::app()->authManager->assign("director",$model->id);
 
 				$this->redirect(array('view','id'=>$model->id));
