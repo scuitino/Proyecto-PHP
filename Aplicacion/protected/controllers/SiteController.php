@@ -29,13 +29,45 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		$criteria = new CDbCriteria();
+		$criteria->compare('estadoInmueble', '1');
+		$criteria->compare('destacadoInmueble', '1');;
+		$dataProvider=new CActiveDataProvider('Inmueble', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+		public function actionBuscarInmuebles()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		$criteria = new CDbCriteria();
+		$criteria->compare('estadoInmueble', '1');
+		$criteria->compare('destacadoInmueble', '1');;
+		$dataProvider=new CActiveDataProvider('Inmueble', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+
 		$dataProvider=new CActiveDataProvider('Inmueble');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 		
+
 	}
 	
+
 
 	public function action_img_view(){ 
 		$dataProvider=new CActiveDataProvider('Inmueble');

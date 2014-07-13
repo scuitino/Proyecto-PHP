@@ -8,9 +8,6 @@
  * @property string $urlImagen
  * @property integer $Inmueble_idInmueble
  * @property integer $portadaImagen
- *
- * The followings are the available model relations:
- * @property Inmueble $inmuebleIdInmueble
  */
 class Imagen extends CActiveRecord
 {

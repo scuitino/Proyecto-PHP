@@ -29,20 +29,20 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','create','index'),
+				'actions'=>array('create','index'),
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('update'),
+				'actions'=>array('update','view'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','admin','delete','update'),
+				'actions'=>array('index','admin','delete','update','view'),
 				'roles'=>array('empleado'),
 			),
 
 			array('allow',
-				'actions'=>array('index','admin','delete','update','create','view','empleado'),
+				'actions'=>array('index','admin','delete','update','create','view','empleado','ListarEmpleados'),
 				'roles'=>array('director'),
 			),
 
@@ -58,6 +58,7 @@ class UsersController extends Controller
 	 */
 	public function actionView($id)
 	{
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -78,17 +79,19 @@ class UsersController extends Controller
 		{
 
 			$model->attributes=$_POST['Users'];
+			$model->rol="registrado";
+
 			if($model->save()){
                
                //aca creo el rol
 				//Yii::app()->authManager->createRole("registrado");
-				Yii::app()->authManager->createRole("empleado");
+				//Yii::app()->authManager->createRole("empleado");
 				//Yii::app()->authManager->createRole("director");
 
 				//Asigno rol
-
+                
 				Yii::app()->authManager->assign("registrado",$model->id);
-				Yii::app()->authManager->assign("empleado",$model->id);
+				//Yii::app()->authManager->assign("empleado",$model->id);
 				//Yii::app()->authManager->assign("director",$model->id);
 
 				$this->redirect(array('view','id'=>$model->id));
@@ -101,6 +104,24 @@ class UsersController extends Controller
 			'model'=>$model,
 		));
 	}
+
+		public function actionListarEmpleados()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		$UsuarioID=Yii::app()->user->id;
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)';
+		//$criteria->params= array(':UsuarioID'=>$UsuarioID);
+		$dataProvider=new CActiveDataProvider('Users', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('ListarEmpleados',array(
+			'dataProvider'=>$dataProvider,
+		));		
+}
 
 	public function actionEmpleado()
 {
@@ -118,6 +139,8 @@ class UsersController extends Controller
     if(isset($_POST['Users']))
     {
         $model->attributes=$_POST['Users'];
+        $model->rol="empleado";
+
         if($model->save()){
                
 				Yii::app()->authManager->assign("empleado",$model->id);
@@ -144,15 +167,21 @@ class UsersController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
+
 		{
+			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
+			||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)	
+			||Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+			 
+			{
 			$model->attributes=$_POST['Users'];
 
 			
-			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+			
 
 			//Acá se podría el OR para agregar el acceso también al director.
 			
-			{	
+				
 
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

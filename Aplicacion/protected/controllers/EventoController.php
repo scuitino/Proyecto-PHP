@@ -32,16 +32,16 @@ class EventoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('index','create','update'),
+				'actions'=>array('index','create','update','nuevoEvento','view'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','admin','delete','update'),
+				'actions'=>array('index','admin','delete','update','nuevoEvento'),
 				'roles'=>array('empleado'),
 			),
 
 			array('allow',
-				'actions'=>array('index','admin','delete','update','create','view'),
+				'actions'=>array('index','admin','delete','update','create','view','nuevoEvento'),
 				'roles'=>array('director'),
 			),
 
@@ -49,6 +49,31 @@ class EventoController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+
+	public function actionNuevoEvento()
+	{
+    $model=new Evento;
+
+    // uncomment the following code to enable ajax-based validation
+    /*
+    if(isset($_POST['ajax']) && $_POST['ajax']==='evento-nuevoEvento-form')
+    {
+        echo CActiveForm::validate($model);
+        Yii::app()->end();
+    }
+    */
+
+    if(isset($_POST['Evento']))
+    {
+        $model->attributes=$_POST['Evento'];
+        $model->Usuario_id=Yii::app()->user->id;
+        if($model->save())
+        {
+            $this->redirect(array('view','id'=>$model->idEvento));
+        }
+    }
+    $this->render('nuevoEvento',array('model'=>$model));
 	}
 
 	/**

@@ -26,22 +26,25 @@
 		<div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/header_inmo.jpg'; ?>"/> </div>
 	</div><!-- header -->	
 
+
 <div class="container" id="page">
  <?php
 $this->widget(
     'bootstrap.widgets.TbNavbar',
     array(
-        'type' => 'inverse',
+        'type' => null,//'inverse',
         'brand' => 'Inmobiliaria House',
-        'brandUrl' =>Yii::app()->request->baseUrl,
+        'brandUrl' => '#',
         'collapse' => true, // requires bootstrap-responsive.css
         'fixed' => false,
-        'items' => array( 
+        'items' => array(
             array(
                 'class' => 'bootstrap.widgets.TbMenu',
                 'items' => array(
 
-                  
+                    array('label'=>'Inicio', 'url'=>array('site/index')),
+                    array('label'=>'Contáctenos', 'url'=>array('contacto/create'), 'visible'=>Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+                    array('label' => 'Registro', 'url'=>array('users/create'), 'visible'=>Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
                     // array(
                     //     'label' => 'Barrios',
                     //     'url' => '#',
@@ -63,15 +66,14 @@ $this->widget(
                     // ),
                 ),
             ),
-            '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
+            //'<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
             array(
                 'class' => 'bootstrap.widgets.TbMenu',
                 'htmlOptions' => array('class' => 'pull-right'),
                 'items' => array(
-                    array('label' => 'Registro', 'url'=>array('users/create'), 'visible'=>Yii::app()->user->isGuest),
                     array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                     array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-                    '---',
+                    //s'---',
                     // array(
                     //     'label' => 'Admin',
                     //     'url' => '#',
@@ -90,21 +92,28 @@ $this->widget(
 );
 ?>
 
+
         <?php $this->widget('bootstrap.widgets.TbMenu', array(
             
             'htmlOptions' => array('class' => 'pull-right'),
             'type'=>'list',
             'items'=>array(
                 array('label'=>'MENU','visible'=>!Yii::app()->user->isGuest,),
-                array('label'=>'Inicio', 'icon'=>'home', 'url'=>'#', 'active'=>true,'visible'=>!Yii::app()->user->isGuest,),
-                //array('label'=>'Mis Inmuebles', 'icon'=>'book', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
-                array('label'=>'AJUSTES','visible'=>!Yii::app()->user->isGuest,),
-                array('label'=>'Editar Perfil', 'icon'=>'pencil', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
-                // array('label'=>'Profile', 'icon'=>'user', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest),),
-                // array('label'=>'Settings', 'icon'=>'cog', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
-                array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Gestion de Inmuebles', 'icon'=>'home', 'url'=>array('inmueble/index'), 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                 array('label'=>'Gestion de Clientes', 'icon'=>'flag', 'url'=>array('users/index'), 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+                array('label'=>'Gestion de Empleados', 'icon'=>'flag', 'url'=>array('users/index'), 'active'=>true,'visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)),
+                array('label'=>'Mis Inmuebles', 'icon'=>'home', 'url'=>array('inmueble/MisInmuebles'),'visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+                 array('label'=>'Crear Inmueble', 'icon'=>'home', 'url'=>array('inmueble/create'),'visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+               //  array('label'=>'AJUSTES','visible'=>!Yii::app()->user->isGuest,),
+               //  array('label'=>'Editar Perfil', 'icon'=>'pencil', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+               //  // array('label'=>'Profile', 'icon'=>'user', 'url'=>'#','visible'=>(!Yii::app()->user->isGuest),),
+               //  // array('label'=>'Settings', 'icon'=>'cog', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+               // // array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>!Yii::app()->user->isGuest,),
+                // array('label'=>'Help', 'icon'=>'flag', 'url'=>'#','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
+           
             ),
         )); ?>
+
 
 	<div id="mainmenu">
 		
@@ -119,10 +128,13 @@ $this->widget(
 
 	<div class="clear"></div>
 
+
+
 	<div id="footer">
+        <strong>-Inmobiliaria House-</strong><br/>
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 		All Rights Reserved.<br/>
-        <strong>-Inmobiliaria Tecnologo-</strong>
+        
 	</div><!-- footer -->
 
 </div><!-- page -->

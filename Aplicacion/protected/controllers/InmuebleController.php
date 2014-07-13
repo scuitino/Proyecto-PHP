@@ -29,15 +29,15 @@ class InmuebleController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','index'),
+				'actions'=>array('view','index','busqueda'),
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','MisInmuebles','view'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','create','admin','delete','update'),
+				'actions'=>array('index','create','admin','delete','update','view'),
 				'roles'=>array('empleado'),
 			),
 
@@ -118,26 +118,36 @@ class InmuebleController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$params["inmueble"]=$model;
+		$params["inmuebles"]=$model;
 			
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Inmueble']))
 		{
+			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
+			||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)	
+			||Yii::app()->authManager->checkAccess("updateOwnInmueble",Yii::app()->user->id,$params))
+			{
 			$model->attributes=$_POST['Inmueble']; 
 
-			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)))
+			
 
-			{
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idInmueble));
-		}
 
+			}else{
+
+			throw new CHttpException(500,'You are not authorized to perform this action');
+			}
+		
+
+}
 		$this->render('update',array(
 			'model'=>$model,
 		));
-	}
+	
 	}
 
 	/**
@@ -193,6 +203,40 @@ class InmuebleController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+
+	public function actionMisInmuebles()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		$UsuarioID=Yii::app()->user->id;
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'Usuario_id=:UsuarioID';
+		$criteria->params= array(':UsuarioID'=>$UsuarioID);
+		$dataProvider=new CActiveDataProvider('Inmueble', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('MisInmuebles',array(
+			'dataProvider'=>$dataProvider,
+		));		
+
+	}
+
+	/**
+	 * Búsqueda del usuario.
+	 */
+	public function actionBusqueda()
+	{
+		$model=new Inmueble('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Inmueble']))
+			$model->attributes=$_GET['Inmueble'];
+
+		$this->render('busqueda',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
