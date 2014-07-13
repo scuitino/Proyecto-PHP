@@ -101,6 +101,7 @@ class ImagenController extends Controller
 		if(isset($_POST['Imagen']))
 		{
 			$model->attributes=$_POST['Imagen'];
+			//$model->image=CUploadedFile::getInstance($model,'image');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idImagen));
 		}
