@@ -33,11 +33,11 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('update'),
+				'actions'=>array('update','view'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','admin','delete','update'),
+				'actions'=>array('index','admin','delete','update','view'),
 				'roles'=>array('empleado'),
 			),
 
@@ -58,6 +58,7 @@ class UsersController extends Controller
 	 */
 	public function actionView($id)
 	{
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -164,8 +165,12 @@ class UsersController extends Controller
 		if(isset($_POST['Users']))
 
 		{
-			if (Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)){
-			//$model->attributes=$_POST['Users'];
+			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
+			||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)	
+			||Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+			 
+			{
+			$model->attributes=$_POST['Users'];
 
 			
 			
