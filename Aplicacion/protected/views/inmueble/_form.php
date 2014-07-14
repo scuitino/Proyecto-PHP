@@ -113,6 +113,8 @@
         <?php echo $form->labelEx($modelImage, 'image');?>
         <?php echo $form->fileField($modelImage, 'image'); ?>
         <?php echo $form->error($modelImage, 'image'); ?>
+        <?php echo $form->textField($modelImage,'Inmueble_idInmuebles',array('value'=>"0", 'readonly'=>"true", 'style'=>"visibility:hidden")); 
+		 	echo $form->textField($modelImage,'portadaImagen',array('value'=>"true", 'readonly'=>"true", 'style'=>"visibility:hidden")); ?>
     </div>
 
 	<!-- <div class="row">

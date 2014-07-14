@@ -8,6 +8,9 @@
  * @property string $urlImagen
  * @property integer $Inmueble_idInmueble
  * @property integer $portadaImagen
+ *
+ * The followings are the available model relations:
+ * @property Inmueble $inmuebleIdInmueble
  */
 class Imagen extends CActiveRecord
 {
@@ -34,6 +37,7 @@ class Imagen extends CActiveRecord
 			// @todo Please remove those attributes that should not be searched.
 			array('idImagen, urlImagen, Inmueble_idInmueble, portadaImagen', 'safe', 'on'=>'search'),
 		);
+		
 	}
 
 	/**

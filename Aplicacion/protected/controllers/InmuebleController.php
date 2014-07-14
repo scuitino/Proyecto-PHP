@@ -29,14 +29,15 @@ class InmuebleController extends Controller
 		return array(
 			array('allow',  
 				'actions'=>array('view','index','busqueda','buscar'),
+
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('create','update','MisInmuebles','view'),
+				'actions'=>array('create','update'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','create','admin','delete','update','view'),
+				'actions'=>array('index','create','admin','delete','update'),
 				'roles'=>array('empleado'),
 			),
 
@@ -86,17 +87,20 @@ class InmuebleController extends Controller
 
 			$uploadedFile=CUploadedFile::getInstance($modelImage,'image');
                         $fileName = $uploadedFile;
-                        $model->Imagen_Id = $fileName;
+                        $model->Imagen_Id = $fileName->getname();
 
             $modelImage->urlImagen = '/images/'.$fileName;
-            $modelImage->Inmueble_idInmueble= $model->idInmueble;
-            $modelImage->portadaImagen=false;
+            $modelImage->portadaImagen=0;
 
 			$model->destacadoInmueble=0;
 			$model->estadoInmueble=0;
 			$model->Usuario_id=Yii::app()->user->id;
-		if ($modelImage->save()){
-			if($model->save()){
+
+		if($model->save()){
+			$modelImage->Inmueble_idInmueble= $model->idInmueble;
+			if ($modelImage->save()){			
+				$model->Imagen_Id = $modelImage->idImagen;
+				$model->save();
 				$uploadedFile->saveAs('/var/www'.Yii::app()->baseUrl.'/images/'.$uploadedFile->getname(),true); 
 				$this->redirect(array('view','id'=>$model->idInmueble));
 			}
@@ -117,31 +121,21 @@ class InmuebleController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$params["inmuebles"]=$model;
+		$params["inmueble"]=$model;
 			
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Inmueble']))
 		{
-			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
-			||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)	
-			||Yii::app()->authManager->checkAccess("updateOwnInmueble",Yii::app()->user->id,$params))
-			{
 			$model->attributes=$_POST['Inmueble']; 
 
-			
+			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)))
 
-			
+			{
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idInmueble));
-
-			}else{
-
-			throw new CHttpException(500,'You are not authorized to perform this action');
-			}
-		
-
+		}
 }
 		$this->render('update',array(
 			'model'=>$model,
@@ -215,7 +209,7 @@ class InmuebleController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
+	
 	public function actionMisInmuebles()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -240,6 +234,9 @@ class InmuebleController extends Controller
 	 */
 
 
+	//	$this->render('busqueda',array(
+	//		'model'=>$model,
+	//	));
 
 	/**
 	 * Performs the AJAX validation.
@@ -253,4 +250,6 @@ class InmuebleController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }
+

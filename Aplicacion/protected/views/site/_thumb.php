@@ -17,15 +17,21 @@
 </head>
 
 <body>
-
+<div class="container" id="page">
+    <div id="header">
+        <div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/destacados.png'; ?>"/> </div>
+    </div><!-- header -->   
 <div class="col-sm-6 col-md-4" >
     <div class="thumbnail" style="float:left">
+
+        <img src="<?php echo Yii::app()->request->baseUrl . Imagen::model()->findByPK($data->Imagen_Id)->urlImagen; ?>" alt="">
+
         <!--<img src="<?php //echo Yii::app()->request->baseUrl . '/images/house1.jpg'; ?>" alt="">-->
-        <div id="slider1">
+        <!--<div id="slider1">
         <a class="buttons prev" href="#">left</a>
         <div class="viewport">
             <ul class="overview">
-                <!-- <img src="<?php echo Yii::app()->request->baseUrl . '/images/house1.jpg'; ?>" alt=""/>-->
+                <img src="<?php echo Yii::app()->request->baseUrl . '/images/house1.jpg'; ?>" alt=""/>
                 <li><img src="/Proyecto-PHP/Aplicacion/images/house1.jpg" /></li>
                 <li><img src="/Proyecto-PHP/Aplicacion/images/picture5.jpg" /></li>
                 <li><img src="/Proyecto-PHP/Aplicacion/images/picture4.jpg" /></li>
@@ -35,8 +41,7 @@
             </ul>
         </div>
         <a class="buttons next" href="#">right</a>
-    </div>
-
+    </div>-->
 
         <div class="caption">
             <h3><?php echo CHtml::encode($data->tituloInmueble); ?></h3>

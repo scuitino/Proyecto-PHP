@@ -77,9 +77,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'operacion'); ?>
-		<?php echo ZHtml::enumDropDownList($model, 'operacion'); ?>
-		<?php echo $form->error($model,'operacion'); ?>
+		<?php echo $form->labelEx($model,'Operacion'); ?>
+		<?php echo $form->dropDownList($model,'operacion', CHtml::listData(Barrio::model()->findAll(),'idBarrio','nombreBarrio')); ?>
+		<?php echo $form->error($model,'Barrio_idBarrio'); ?>
 	</div>
 
 	<div class="row">

@@ -23,7 +23,7 @@
 
 <div class="container" id="page">
 	<div id="header">
-		<div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/header_inmo.jpg'; ?>"/> </div>
+		<div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/header.jpg'; ?>"/> </div>
 	</div><!-- header -->	
 
 

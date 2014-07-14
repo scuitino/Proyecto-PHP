@@ -7,7 +7,7 @@ $this->pageTitle="Inmobiliaria House";
 
 
 <H3><strong> Inmuebles Destacados:</strong></H3>
-  <img src="/Proyecto-PHP/Aplicacion/images/house1.jpg" />
+
 <?php 
 // Aca armo el listado de imagenes
 

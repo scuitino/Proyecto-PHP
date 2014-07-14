@@ -60,6 +60,7 @@ class Inmueble extends CActiveRecord
 		return array(
 			'usuario' => array(self::BELONGS_TO, 'User', 'Usuario_id'),
 			'barrios' => array(self::BELONGS_TO, 'Barrio', 'Barrio_idBarrio'),
+			'imagenes' => array(self::HAS_MANY, 'Imagen', 'Inmueble_idInmueble'),
 		);
 	}
 
@@ -116,6 +117,7 @@ class Inmueble extends CActiveRecord
 		$criteria->compare('superficieInmueble',$this->superficieInmueble);
 		$criteria->compare('Barrio_idBarrio',$this->Barrio_idBarrio);
 		$criteria->compare('operacion',$this->operacion);
+		$criteria->compare('tipoInmueble',$this->operacion);
 		$criteria->compare('Usuario_id',$this->Usuario_id);
 
 		return new CActiveDataProvider($this, array(
