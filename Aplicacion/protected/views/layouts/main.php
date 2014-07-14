@@ -92,13 +92,13 @@ $this->widget(
 );
 ?>
 
-<?php $UserID=Yii::app()->user->id ?>
+ <?php  $UserID=Yii::app()->user->id; ?>
         <?php $this->widget('bootstrap.widgets.TbMenu', array(
-            
+         
             'htmlOptions' => array('class' => 'pull-right'),
             'type'=>'list',
             'items'=>array(
-                array('label'=>'MENU:','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'      MENU:   ','visible'=>!Yii::app()->user->isGuest,),
 
                 array('label'=>'Gestion de Inmuebles:','visible'=>!Yii::app()->user->isGuest,),
                 array('label'=>'Crear Inmueble', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>!Yii::app()->user->isGuest),//Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
@@ -114,12 +114,12 @@ $this->widget(
                  array('label'=>'Crear Empleado', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/empleado','visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
                  array('label'=>'Administrar Empleados', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/listarEmpleados','visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
 
-
+                 array('label'=>'Mensajes de Clientes:','visible'=>Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)),
+                  array('label'=>'Ver Mensajes', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/contacto','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
                
                 array('label'=>'Mis Inmuebles', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/MisInmuebles','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
-                array('label'=>'Editar Perfil', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID','visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
-
-
+                array('label'=>'Editar Perfil', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/update/'.$UserID,'visible'=>Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+               
            
             ),
         )); ?>
@@ -142,7 +142,7 @@ $this->widget(
 
 	<div id="footer">
         <strong>-Inmobiliaria House-</strong><br/>
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Tecnologos.<br/>
 		All Rights Reserved.<br/>
         
 	</div><!-- footer -->

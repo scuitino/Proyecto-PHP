@@ -9575,3 +9575,1055 @@ Stack trace:
 REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/listarClientes
 HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/admin
 ---
+2014/07/13 18:26:35 [warning] [application] Failed to set unsafe attribute "operacion" of "Inmueble".
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (80)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 18:26:35 [warning] [application] Failed to set unsafe attribute "tipoInmueble" of "Inmueble".
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (80)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 18:41:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/$U...')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/create
+---
+2014/07/13 19:26:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/$U...')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/login
+---
+2014/07/13 19:26:30 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/$UserID
+---
+2014/07/13 19:37:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 19:38:23 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 19:38:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 19:38:42 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 19:38:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 19:39:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 19:39:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+---
+2014/07/13 19:39:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+---
+2014/07/13 19:40:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+---
+2014/07/13 19:40:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+---
+2014/07/13 19:40:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/
+---
+2014/07/13 19:42:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/
+---
+2014/07/13 19:42:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+---
+2014/07/13 19:43:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/update?var=7
+---
+2014/07/13 19:43:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+---
+2014/07/13 19:43:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+---
+2014/07/13 19:44:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('update')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+---
+2014/07/13 19:45:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/update?0=7
+---
+2014/07/13 19:46:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+---
+2014/07/13 19:49:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update/<')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/%3C?php%20Yii::app()-%3Euser-%3Eid%20?%3E
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/MisInmuebles
+---
+2014/07/13 19:54:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('contacto/admin')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contacto/admin
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/contacto/
+---
+2014/07/13 19:54:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('contacto/admin')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contacto/admin
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/contacto/
+---
+2014/07/13 20:18:01 [error] [php] Undefined variable: user (/var/www/Proyecto-PHP/Aplicacion/protected/views/layouts/main.php:120)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/widgets/CContentDecorator.php(76): ContactoController->renderFile()
+#1 /var/www/Proyecto-PHP/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /var/www/Proyecto-PHP/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /var/www/Proyecto-PHP/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /var/www/Proyecto-PHP/framework/web/CBaseController.php(300): ContactoController->endWidget()
+#5 /var/www/Proyecto-PHP/Aplicacion/protected/views/layouts/column2.php(22): ContactoController->endContent()
+#6 /var/www/Proyecto-PHP/framework/web/CBaseController.php(126): require()
+#7 /var/www/Proyecto-PHP/framework/web/CBaseController.php(95): ContactoController->renderInternal()
+#8 /var/www/Proyecto-PHP/framework/web/CController.php(784): ContactoController->renderFile()
+#9 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/ContactoController.php(138): ContactoController->render()
+#10 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): ContactoController->actionIndex()
+#11 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): ContactoController->runAction()
+#13 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): ContactoController->filterAccessControl()
+#16 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/Proyecto-PHP/framework/web/CController.php(265): ContactoController->runActionWithFilters()
+#19 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): ContactoController->run()
+#20 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contacto/
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/layouts/main.php (120)
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/layouts/column2.php (22)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/ContactoController.php (138)
+2014/07/13 20:21:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contato".' in /var/www/Proyecto-PHP/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('contato')
+#1 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contato
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/index
+---
+2014/07/13 20:21:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contato".' in /var/www/Proyecto-PHP/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('contato')
+#1 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contato
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/contato
+---
+2014/07/13 20:26:34 [error] [php] Use of undefined constant php - assumed 'php' (/var/www/Proyecto-PHP/Aplicacion/protected/views/contacto/view.php:19)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(869): ContactoController->renderFile()
+#1 /var/www/Proyecto-PHP/framework/web/CController.php(782): ContactoController->renderPartial()
+#2 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/ContactoController.php(56): ContactoController->render()
+#3 unknown(0): ContactoController->actionView()
+#4 /var/www/Proyecto-PHP/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): ContactoController->runAction()
+#8 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): ContactoController->filterAccessControl()
+#11 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/Proyecto-PHP/framework/web/CController.php(265): ContactoController->runActionWithFilters()
+#14 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): ContactoController->run()
+#15 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contacto/5
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/contacto/view.php (19)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/ContactoController.php (56)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 20:34:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 20:35:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 20:35:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 20:35:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?0=7
+---
+2014/07/13 20:35:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+---
+2014/07/13 20:39:42 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'You are not authorized to perform this action' in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/UsersController.php:218
+Stack trace:
+#0 [internal function]: UsersController->actionUpdate('3')
+#1 /var/www/Proyecto-PHP/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#12 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#13 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update/3
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update/3
+---
+2014/07/13 20:43:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 20:43:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 20:43:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+---
+2014/07/13 20:43:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+---
+2014/07/13 20:43:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+---
+2014/07/13 20:43:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?=7
+---
+2014/07/13 20:44:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?=7
+---
+2014/07/13 20:44:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=%24UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?0=
+---
+2014/07/13 20:44:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=%24UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?0=
+---
+2014/07/13 20:44:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?0=var%3D%3E%24UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?0=%24UserID
+---
+2014/07/13 21:15:03 [error] [php] Cannot use a scalar value as an array (/var/www/Proyecto-PHP/framework/zii/widgets/CDetailView.php:210)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CBaseController.php(126): require()
+#1 /var/www/Proyecto-PHP/framework/web/CBaseController.php(95): InmuebleController->renderInternal()
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(782): InmuebleController->renderPartial()
+#4 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php(63): InmuebleController->render()
+#5 unknown(0): InmuebleController->actionView()
+#6 /var/www/Proyecto-PHP/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#7 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#10 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#13 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#16 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#17 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/5
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/view.php (39)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (63)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 21:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "buqueda".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('buqueda')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('buqueda')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('inmueble/buqued...')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/buqueda
+---
+2014/07/13 21:58:09 [error] [php] Undefined variable: modelImage (/var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/_form.php:21)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#1 /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/update.php(21): InmuebleController->renderPartial()
+#2 /var/www/Proyecto-PHP/framework/web/CBaseController.php(126): require()
+#3 /var/www/Proyecto-PHP/framework/web/CBaseController.php(95): InmuebleController->renderInternal()
+#4 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(782): InmuebleController->renderPartial()
+#6 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php(149): InmuebleController->render()
+#7 unknown(0): InmuebleController->actionUpdate()
+#8 /var/www/Proyecto-PHP/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#12 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#15 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#18 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#19 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/update/2
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/_form.php (21)
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/update.php (21)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (149)
+2014/07/13 22:09:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=%24UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php
+---
+2014/07/13 22:30:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=%24UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+---
+2014/07/13 22:32:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=%24UserID
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/update?var=%24UserID
+---
+2014/07/13 22:32:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/
+---
+2014/07/13 22:35:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/Proyecto-PHP/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('users/update')
+#10 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/users/update?var=7
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/users/
+---
+2014/07/13 22:54:04 [error] [php] Undefined variable: model (/var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php:232)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (232)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 23:18:13 [error] [php] Undefined variable: model (/var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/busqueda.php:34)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#1 /var/www/Proyecto-PHP/framework/web/CController.php(782): InmuebleController->renderPartial()
+#2 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php(245): InmuebleController->render()
+#3 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): InmuebleController->actionBusqueda()
+#4 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#6 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#9 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#12 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#13 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/busqueda.php (34)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (245)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 23:18:47 [error] [php] Undefined variable: model (/var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/busqueda.php:34)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#1 /var/www/Proyecto-PHP/framework/web/CController.php(782): InmuebleController->renderPartial()
+#2 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php(245): InmuebleController->render()
+#3 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): InmuebleController->actionBusqueda()
+#4 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#6 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#9 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#12 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#13 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/busqueda.php (34)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (245)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 23:21:17 [error] [php] Undefined variable: model (/var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/_search.php:15)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#1 /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/busqueda.php(36): InmuebleController->renderPartial()
+#2 /var/www/Proyecto-PHP/framework/web/CBaseController.php(126): require()
+#3 /var/www/Proyecto-PHP/framework/web/CBaseController.php(95): InmuebleController->renderInternal()
+#4 /var/www/Proyecto-PHP/framework/web/CController.php(869): InmuebleController->renderFile()
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(782): InmuebleController->renderPartial()
+#6 /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php(245): InmuebleController->render()
+#7 /var/www/Proyecto-PHP/framework/web/actions/CInlineAction.php(49): InmuebleController->actionBusqueda()
+#8 /var/www/Proyecto-PHP/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#10 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#13 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#16 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#17 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/_search.php (15)
+in /var/www/Proyecto-PHP/Aplicacion/protected/views/inmueble/busqueda.php (36)
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (245)
+2014/07/13 23:29:39 [error] [php] Creating default object from empty value (/var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php:232)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (232)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/13 23:29:51 [error] [php] Undefined variable: model (/var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php:233)
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(133): InmuebleController->runAction()
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): InmuebleController->filterAccessControl()
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): InmuebleController->runActionWithFilters()
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): InmuebleController->run()
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CWebApplication->run()
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/busqueda
+in /var/www/Proyecto-PHP/Aplicacion/protected/controllers/InmuebleController.php (233)
+in /var/www/Proyecto-PHP/Aplicacion/index.php (13)
+2014/07/14 00:23:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/Proyecto-PHP/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/Proyecto-PHP/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/Proyecto-PHP/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/Proyecto-PHP/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/Proyecto-PHP/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/Proyecto-PHP/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('contacto/admin')
+#9 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/contacto/admin
+HTTP_REFERER=http://localhost/Proyecto-PHP/Aplicacion/index.php/site/login
+---
+2014/07/14 01:14:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "_form".' in /var/www/Proyecto-PHP/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/Proyecto-PHP/framework/web/CController.php(270): CController->missingAction('_form')
+#1 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(282): CController->run('_form')
+#2 /var/www/Proyecto-PHP/framework/web/CWebApplication.php(141): CWebApplication->runController('inmueble/_form')
+#3 /var/www/Proyecto-PHP/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/Proyecto-PHP/Aplicacion/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Proyecto-PHP/Aplicacion/index.php/inmueble/_form
+---

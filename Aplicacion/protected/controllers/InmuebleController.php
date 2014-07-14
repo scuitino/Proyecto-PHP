@@ -1,4 +1,3 @@
-
 <?php
 
 class InmuebleController extends Controller
@@ -230,6 +229,7 @@ class InmuebleController extends Controller
 	public function actionBusqueda()
 	{
 		$model=new Inmueble('search');
+		//$model->estadoInmueble='1';
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Inmueble']))
 			$model->attributes=$_GET['Inmueble'];
@@ -238,6 +238,7 @@ class InmuebleController extends Controller
 			'model'=>$model,
 		));
 	}
+
 
 	/**
 	 * Performs the AJAX validation.
