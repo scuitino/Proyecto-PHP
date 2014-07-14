@@ -33,7 +33,7 @@ class InmuebleController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','MisInmuebles'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
@@ -137,8 +137,6 @@ class InmuebleController extends Controller
 				$this->redirect(array('view','id'=>$model->idInmueble));
 			}
 		}
-
-}
 
 
 		$this->render('update',array(
