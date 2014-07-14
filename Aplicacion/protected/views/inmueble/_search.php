@@ -66,9 +66,20 @@
 		<?php echo $form->textField($model,'superficieInmueble'); ?>
 	</div>
 
-	<div class="row">
+<!-- 	<div class="row">
 		<?php echo $form->label($model,'Barrio_idBarrio'); ?>
 		<?php echo $form->textField($model,'Barrio_idBarrio'); ?>
+	</div> -->
+	<div class="row">
+		<?php echo $form->labelEx($model,'Barrio_idBarrio'); ?>
+		<?php echo $form->dropDownList($model,'Barrio_idBarrio', CHtml::listData(Barrio::model()->findAll(),'idBarrio','nombreBarrio')); ?>
+		<?php echo $form->error($model,'Barrio_idBarrio'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'operacion'); ?>
+		<?php echo ZHtml::enumDropDownList($model, 'operacion'); ?>
+		<?php echo $form->error($model,'operacion'); ?>
 	</div>
 
 	<div class="row">

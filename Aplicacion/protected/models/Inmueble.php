@@ -115,6 +115,7 @@ class Inmueble extends CActiveRecord
 		$criteria->compare('cocinaInmueble',$this->cocinaInmueble);
 		$criteria->compare('superficieInmueble',$this->superficieInmueble);
 		$criteria->compare('Barrio_idBarrio',$this->Barrio_idBarrio);
+		$criteria->compare('operacion',$this->operacion);
 		$criteria->compare('Usuario_id',$this->Usuario_id);
 
 		return new CActiveDataProvider($this, array(

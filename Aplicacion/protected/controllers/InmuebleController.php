@@ -28,7 +28,7 @@ class InmuebleController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','index','busqueda'),
+				'actions'=>array('view','index','busqueda','buscar'),
 				'users'=>array('*'),
 			),
 			array('allow', 
@@ -189,6 +189,18 @@ class InmuebleController extends Controller
 		));
 	}
 
+		public function actionBuscar()
+	{
+		$model=new Inmueble('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Inmueble']))
+			$model->attributes=$_GET['Inmueble'];
+
+		$this->render('buscar',array(
+			'model'=>$model,
+		));
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -226,18 +238,7 @@ class InmuebleController extends Controller
 	/**
 	 * Búsqueda del usuario.
 	 */
-	public function actionBusqueda()
-	{
-		$model=new Inmueble('search');
-		//$model->estadoInmueble='1';
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Inmueble']))
-			$model->attributes=$_GET['Inmueble'];
 
-		$this->render('busqueda',array(
-			'model'=>$model,
-		));
-	}
 
 
 	/**
