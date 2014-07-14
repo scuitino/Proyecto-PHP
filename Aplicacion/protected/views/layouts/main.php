@@ -102,13 +102,13 @@ $this->widget(
                 array('label'=>'      MENU:   ','visible'=>!Yii::app()->user->isGuest,),
 
 
-                array('label'=>'Gestion de Inmuebles:'),
-                array('label'=>'Buscar Inmuebles', 'icon'=>'home', 'url'=>array('inmueble/busqueda'),'visible'=>Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
+                array('label'=>'Gestion de Inmuebles:', 'visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)),
+                //array('label'=>'Buscar Inmuebles', 'icon'=>'home', 'url'=>array('inmueble/busqueda'),'visible'=>Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
                 array('label'=>'Crear Inmueble', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>!Yii::app()->user->isGuest),//Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
                 array('label'=>'Administrar Inmuebles', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/admin','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
 
 
-                array('label'=>'Gestion de Clientes:','visible'=>!Yii::app()->user->isGuest,),
+                array('label'=>'Gestion de Clientes:','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)),
                 array('label'=>'Crear Cliente', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/inmueble/create','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
                  array('label'=>'Administrar Clientes', 'icon'=>'home', 'url'=>'/Proyecto-PHP/Aplicacion/index.php/users/listarClientes','visible'=>Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
 
