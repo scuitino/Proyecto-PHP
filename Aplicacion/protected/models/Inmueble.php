@@ -60,6 +60,7 @@ class Inmueble extends CActiveRecord
 		return array(
 			'usuario' => array(self::BELONGS_TO, 'User', 'Usuario_id'),
 			'barrios' => array(self::BELONGS_TO, 'Barrio', 'Barrio_idBarrio'),
+			'imagenes' => array(self::HAS_MANY, 'Imagen', 'Inmueble_idInmueble'),
 		);
 	}
 
