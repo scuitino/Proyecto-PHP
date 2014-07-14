@@ -120,6 +120,8 @@ class InmuebleController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$modelImage = new Imagen;
+		$modelImage =  Imagen::model()->findByPK($model->Imagen_Id);
 		$params["inmueble"]=$model;
 			
 		// Uncomment the following line if AJAX validation is needed
@@ -128,18 +130,17 @@ class InmuebleController extends Controller
 		if(isset($_POST['Inmueble']))
 		{
 			$model->attributes=$_POST['Inmueble']; 
-
 			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)))
-
 			{
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idInmueble));
+			}
 		}
-
 		$this->render('update',array(
 			'model'=>$model,
+			'modelImage'=>$modelImage,
 		));
-	}
+	
 	}
 
 	/**
@@ -196,7 +197,7 @@ class InmuebleController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-	
+
 	public function actionMisInmuebles()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -208,8 +209,7 @@ class InmuebleController extends Controller
 		$criteria->params= array(':UsuarioID'=>$UsuarioID);
 		$dataProvider=new CActiveDataProvider('Inmueble', array(
 			  'criteria'=>$criteria,
-    
-));
+    	));
 		$this->render('MisInmuebles',array(
 			'dataProvider'=>$dataProvider,
 		));		
@@ -230,7 +230,7 @@ class InmuebleController extends Controller
 		$this->render('busqueda',array(
 			'model'=>$model,
 		));
-	
+	}
 	/**
 	 * Performs the AJAX validation.
 	 * @param Inmueble $model the model to be validated
@@ -244,3 +244,7 @@ class InmuebleController extends Controller
 		}
 	}
 }
+
+
+
+
