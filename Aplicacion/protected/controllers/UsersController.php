@@ -1,4 +1,5 @@
 
+
 <?php
 
 class UsersController extends Controller
@@ -33,16 +34,18 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('update','view'),
+
+				'actions'=>array('update', 'view'),
+
 				'roles'=>array('registrado'),
 			),
 			array('allow',
-				'actions'=>array('index','admin','delete','update','view'),
+				'actions'=>array('index','admin','delete','update','view','listarClientes'),
 				'roles'=>array('empleado'),
 			),
 
 			array('allow',
-				'actions'=>array('index','admin','delete','update','create','view','empleado','ListarEmpleados'),
+				'actions'=>array('index','admin','delete','update','create','view','empleado','ListarEmpleados','listarClientes'),
 				'roles'=>array('director'),
 			),
 
@@ -85,6 +88,10 @@ class UsersController extends Controller
                
                //aca creo el rol
 				//Yii::app()->authManager->createRole("registrado");
+
+				// Yii::app()->authManager->createRole("empleado");
+				// Yii::app()->authManager->createRole("director");
+
 				//Yii::app()->authManager->createRole("empleado");
 				//Yii::app()->authManager->createRole("director");
 
@@ -105,20 +112,39 @@ class UsersController extends Controller
 		));
 	}
 
-		public function actionListarEmpleados()
+		public function actionlistarEmpleados()
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		//$dataProvider=new CActiveDataProvider('Inmueble');
-		$UsuarioID=Yii::app()->user->id;
+		//$UsuarioID=Yii::app()->user->id;
 		$criteria = new CDbCriteria();
-		$criteria->condition = 'Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)';
-		//$criteria->params= array(':UsuarioID'=>$UsuarioID);
+		$criteria->compare('rol', 'empleado');
+		//$criteria->compare = ('rol', 'empleado');;
+		
 		$dataProvider=new CActiveDataProvider('Users', array(
 			  'criteria'=>$criteria,
     
 ));
 		$this->render('ListarEmpleados',array(
+			'dataProvider'=>$dataProvider,
+		));		
+}
+
+		public function actionlistarClientes()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		
+		$criteria = new CDbCriteria();
+		$criteria->compare('rol', 'registrado');
+				
+		$dataProvider=new CActiveDataProvider('Users', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('listarClientes',array(
 			'dataProvider'=>$dataProvider,
 		));		
 }
@@ -170,11 +196,12 @@ class UsersController extends Controller
 
 		{
 			if (Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)
-			||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)	
-			||Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
-			 
-			{
-			$model->attributes=$_POST['Users'];
+
+			 ||Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id)
+ 				||Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params))
+
+ 				{
+ 					$model->attributes=$_POST['Users'];
 
 			
 			

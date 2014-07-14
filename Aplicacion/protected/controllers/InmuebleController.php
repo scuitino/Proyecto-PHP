@@ -1,4 +1,3 @@
-
 <?php
 
 class InmuebleController extends Controller
@@ -197,7 +196,41 @@ class InmuebleController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+	
+	public function actionMisInmuebles()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$dataProvider=new CActiveDataProvider('Inmueble');
+		$UsuarioID=Yii::app()->user->id;
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'Usuario_id=:UsuarioID';
+		$criteria->params= array(':UsuarioID'=>$UsuarioID);
+		$dataProvider=new CActiveDataProvider('Inmueble', array(
+			  'criteria'=>$criteria,
+    
+));
+		$this->render('MisInmuebles',array(
+			'dataProvider'=>$dataProvider,
+		));		
 
+	}
+
+	/**
+	 * Búsqueda del usuario.
+	 */
+	public function actionBusqueda()
+	{
+		$model=new Inmueble('search');
+		//$model->estadoInmueble='1';
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Inmueble']))
+			$model->attributes=$_GET['Inmueble'];
+
+		$this->render('busqueda',array(
+			'model'=>$model,
+		));
+	
 	/**
 	 * Performs the AJAX validation.
 	 * @param Inmueble $model the model to be validated
