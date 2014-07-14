@@ -91,8 +91,7 @@ class InmuebleController extends Controller
 
             $modelImage->urlImagen = '/images/'.$fileName;
             $modelImage->portadaImagen=0;
-			if ((!(Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)))||
-					(!(Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id))))
+			if (Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id))
 			{
 				$model->destacadoInmueble=0;
 				$model->estadoInmueble=0;

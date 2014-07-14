@@ -17,10 +17,9 @@
 </head>
 
 <body>
+   
 <div class="container" id="page">
-    <div id="header">
-        <div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/destacados.png'; ?>"/> </div>
-    </div><!-- header -->   
+     
 <div class="col-sm-6 col-md-4" >
     <div class="thumbnail" style="float:left">
 
