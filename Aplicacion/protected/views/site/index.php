@@ -14,7 +14,7 @@ $this->pageTitle="Inmobiliaria House";
 
     echo CHtml::openTag('div', array('class' => 'row-fluid'));
   ?>  
-  <div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/destacados.png'; ?>"/> </div>
+  <!-- <div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/destacados.png'; ?>"/> </div> -->
   <?php 
     $this->widget(
     'bootstrap.widgets.TbThumbnails',
