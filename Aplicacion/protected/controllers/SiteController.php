@@ -31,6 +31,8 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 
 		//$dataProvider=new CActiveDataProvider('Inmueble');
+
+		
 		$criteria = new CDbCriteria();
 		$criteria->compare('estadoInmueble', '1');
 		$criteria->compare('destacadoInmueble', '1');;
@@ -41,6 +43,10 @@ class SiteController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+
+
+
+
 	}
 
 		public function actionBuscarInmuebles()
@@ -142,6 +148,7 @@ class SiteController extends Controller
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}
+
 
 	/**
 	 * Logs out the current user and redirect to homepage.

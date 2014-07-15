@@ -23,7 +23,7 @@
 
 <div class="container" id="page">
 	<div id="header">
-		<div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/header_inmo.jpg'; ?>"/> </div>
+		<div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/header.jpg'; ?>"/> </div>
 	</div><!-- header -->	
 
 
@@ -45,25 +45,7 @@ $this->widget(
                     array('label'=>'Inicio', 'url'=>array('site/index')),
                     array('label'=>'Contáctenos', 'url'=>array('contacto/create'), 'visible'=>Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id),),
                     array('label' => 'Registro', 'url'=>array('users/create'), 'visible'=>Yii::app()->user->isGuest||Yii::app()->authManager->checkAccess("director",Yii::app()->user->id),),
-                    // array(
-                    //     'label' => 'Barrios',
-                    //     'url' => '#',
-                    //     'items' => array(
-                    //         array('label' => 'Buceo', 'url' => '#'),
-                    //         array('label' => 'Malvin', 'url' => '#'),
-                    //         array(
-                    //             'label' => 'Cordon',
-                    //             'url' => '#'
-                    //         ),
-                    //         '---',
-                    //         array('label' => 'NAV HEADER'),
-                    //         array('label' => 'Separated link', 'url' => '#'),
-                    //         array(
-                    //             'label' => 'One more separated link',
-                    //             'url' => '#'
-                    //         ),
-                    //     )
-                    // ),
+                    array('label' => 'Buscar Inmuebles', 'url'=>array('/inmueble/buscar'), 'visible'=>Yii::app()->user->isGuest),
                 ),
             ),
             //'<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',

@@ -28,11 +28,12 @@ class InmuebleController extends Controller
 	{
 		return array(
 			array('allow',  
-				'actions'=>array('view','index'),
+				'actions'=>array('view','index','busqueda','buscar'),
+
 				'users'=>array('*'),
 			),
 			array('allow', 
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','MisInmuebles'),
 				'roles'=>array('registrado'),
 			),
 			array('allow',
@@ -140,6 +141,8 @@ class InmuebleController extends Controller
 				}
 			}
 		}
+
+
 		$this->render('update',array(
 			'model'=>$model,
 			'modelImage'=>$modelImage,
@@ -187,6 +190,18 @@ class InmuebleController extends Controller
 		));
 	}
 
+		public function actionBuscar()
+	{
+		$model=new Inmueble('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Inmueble']))
+			$model->attributes=$_GET['Inmueble'];
+
+		$this->render('buscar',array(
+			'model'=>$model,
+		));
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -223,18 +238,7 @@ class InmuebleController extends Controller
 	/**
 	 * Búsqueda del usuario.
 	 */
-	public function actionBusqueda()
-	{
-		$model=new Inmueble('search');
-		//$model->estadoInmueble='1';
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Inmueble']))
-			$model->attributes=$_GET['Inmueble'];
 
-		$this->render('busqueda',array(
-			'model'=>$model,
-		));
-	}
 	/**
 	 * Performs the AJAX validation.
 	 * @param Inmueble $model the model to be validated
@@ -247,8 +251,6 @@ class InmuebleController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }
-
-
-
 

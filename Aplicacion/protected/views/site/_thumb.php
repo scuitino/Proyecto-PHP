@@ -17,7 +17,9 @@
 </head>
 
 <body>
-
+   
+<div class="container" id="page">
+     
 <div class="col-sm-6 col-md-4" >
     <div class="thumbnail" style="float:left">
 
