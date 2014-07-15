@@ -71,10 +71,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=ultimabd',
+			'connectionString' => 'mysql:host=localhost;dbname=mydb',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'stemcol',
+			'username' => 'admin',
+			'password' => 'admin',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 			'enableProfiling'=>true,

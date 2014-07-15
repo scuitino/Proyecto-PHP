@@ -7,14 +7,15 @@ $this->pageTitle="Inmobiliaria House";
 
 
 <!--<H3><strong> Inmuebles Destacados:</strong></H3>-->
-<div id="header">
-        <div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/destacados.png'; ?>"/> </div>
-    </div><!-- header -->  
+ 
 
 <?php 
 // Aca armo el listado de imagenes
 
     echo CHtml::openTag('div', array('class' => 'row-fluid'));
+  ?>  
+  <div id="image"><img src="<?php echo Yii::app()->request->baseUrl . '/images/destacados.png'; ?>"/> </div>
+  <?php 
     $this->widget(
     'bootstrap.widgets.TbThumbnails',
     array(
