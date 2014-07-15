@@ -90,8 +90,7 @@ class InmuebleController extends Controller
 
             $modelImage->urlImagen = '/images/'.$fileName;
             $modelImage->portadaImagen=0;
-			if ((!(Yii::app()->authManager->checkAccess("director",Yii::app()->user->id)))||
-					(!(Yii::app()->authManager->checkAccess("empleado",Yii::app()->user->id))))
+			if (Yii::app()->authManager->checkAccess("registrado",Yii::app()->user->id))
 			{
 				$model->destacadoInmueble=0;
 				$model->estadoInmueble=0;
@@ -133,10 +132,12 @@ class InmuebleController extends Controller
 		if(isset($_POST['Inmueble']))
 		{
 			$model->attributes=$_POST['Inmueble']; 
-			if ((Yii::app()->authManager->checkAccess("updateOwnUser",Yii::app()->user->id,$params)))
+			if ((Yii::app()->authManager->checkAccess("updateOwnInmueble",Yii::app()->user->id,$params)))
 			{
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idInmueble));
+				if($model->save()){
+					$modelImage->save();
+					$this->redirect(array('view','id'=>$model->idInmueble));
+				}
 			}
 		}
 		$this->render('update',array(
