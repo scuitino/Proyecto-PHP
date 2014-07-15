@@ -21,6 +21,15 @@ class SiteController extends Controller
 		);
 	}
 
+public function actionCalendario(){
+
+
+$this->render('calendario');
+
+
+}
+
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
